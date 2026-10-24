@@ -46,3 +46,24 @@
 </ul>
 
 <%- partial('_partial/mobile-nav') %>
+
+<script>
+  /* 当前页面导航高亮：仅添加视觉类名，不改变导航结构与跳转行为 */
+  (function () {
+    var normalize = function (url) {
+      if (!url || url.indexOf('#') > -1 || url.indexOf('javascript:') === 0) return null;
+      url = url.replace(/[?#].*$/, '');
+      if (url.length > 1) url = url.replace(/\/+$/, '');
+      return url || '/';
+    };
+    var current = normalize(location.pathname) || '/';
+    var links = document.querySelectorAll('#headNav ul.nav-menu li.nav-item > a, #mobile-nav .menu-list a');
+    Array.prototype.forEach.call(links, function (a) {
+      var target = normalize(a.getAttribute('href'));
+      if (target && target === current) {
+        a.classList.add('nav-current');
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  })();
+</script>

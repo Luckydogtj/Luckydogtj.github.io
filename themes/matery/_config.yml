@@ -147,7 +147,7 @@ myProjects:
     构网型储能海上风电柔直系统宽频振荡抑制:
       featured: true
       icon: fas fa-battery-full
-      iconBackground: 'linear-gradient(135deg, #1565c0 0%, #0d47a1 100%)'
+      iconBackground: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)'
       url: /research/gfm-storage
       demoUrl:
       githubUrl:
@@ -163,7 +163,7 @@ myProjects:
     多端特高压柔直源网交互宽频振荡抑制:
       featured: true
       icon: fas fa-broadcast-tower
-      iconBackground: 'linear-gradient(135deg, #00838f 0%, #006064 100%)'
+      iconBackground: 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)'
       url: /research/uhvdc-oscillation
       demoUrl:
       githubUrl:
@@ -179,7 +179,7 @@ myProjects:
     纯电动汽车用轮毂电机研究:
       featured: true
       icon: fas fa-cog
-      iconBackground: 'linear-gradient(135deg, #6a1b9a 0%, #4527a0 100%)'
+      iconBackground: 'linear-gradient(135deg, #315c79 0%, #3b82f6 100%)'
       url: /projects/hub-motor
       demoUrl:
       githubUrl:
@@ -198,19 +198,19 @@ mySkills:
   enable: true
   data:
     MATLAB/Simulink 建模仿真:
-      background: 'linear-gradient(to right, #1565c0 0%, #42a5f5 100%)'
+      background: 'linear-gradient(to right, #1e3a5f 0%, #315c79 100%)'
       percent: 85%
     ANSYS Maxwell / Workbench:
-      background: 'linear-gradient(to right, #00838f 0%, #26c6da 100%)'
+      background: 'linear-gradient(to right, #2563eb 0%, #3b82f6 100%)'
       percent: 80%
     Altium Designer 电路设计:
-      background: 'linear-gradient(to right, #6a1b9a 0%, #ab47bc 100%)'
+      background: 'linear-gradient(to right, #315c79 0%, #60a5fa 100%)'
       percent: 75%
     AutoCAD / Visio 电气制图:
-      background: 'linear-gradient(to right, #ef6c00 0%, #ffb74d 100%)'
+      background: 'linear-gradient(to right, #1e3a5f 0%, #3b82f6 100%)'
       percent: 80%
     英语（CET-6 技术文献阅读）:
-      background: 'linear-gradient(to right, #2e7d32 0%, #66bb6a 100%)'
+      background: 'linear-gradient(to right, #2563eb 0%, #60a5fa 100%)'
       percent: 75%
 
 # 个人相册（关闭，无个人照片）

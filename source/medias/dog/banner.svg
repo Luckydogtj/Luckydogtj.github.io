@@ -1,28 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d47a1"/>
-      <stop offset="0.5" stop-color="#1565c0"/>
-      <stop offset="1" stop-color="#006064"/>
+    <!-- 亮蓝 → 青蓝，横向渐变 -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1556aa"/>
+      <stop offset="0.5" stop-color="#1267b0"/>
+      <stop offset="1" stop-color="#006276"/>
     </linearGradient>
+    <!-- 背景网格：低对比度浅蓝，仅作为纹理 -->
     <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(190, 220, 232, 0.07)" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="1200" height="600" fill="url(#bg)"/>
   <rect width="1200" height="600" fill="url(#grid)"/>
-  <g stroke="rgba(100,181,246,0.35)" stroke-width="1.5" fill="none">
+
+  <!-- 电路连接线与节点：整体下移，避开主标题、副标题与按钮 -->
+  <g transform="translate(0, 60)" stroke="rgba(168, 214, 226, 0.34)" stroke-width="1.5" fill="none">
     <path d="M0,300 L200,300 L240,260 L340,260 L380,300 L520,300"/>
     <path d="M1200,320 L980,320 L940,360 L820,360 L780,320 L640,320"/>
-    <circle cx="200" cy="300" r="5" fill="#64b5f6" stroke="none"/>
-    <circle cx="520" cy="300" r="5" fill="#64b5f6" stroke="none"/>
-    <circle cx="980" cy="320" r="5" fill="#64b5f6" stroke="none"/>
-    <circle cx="640" cy="320" r="5" fill="#64b5f6" stroke="none"/>
   </g>
-  <g fill="rgba(255,255,255,0.06)" font-family="monospace" font-size="14">
-    <text x="60" y="120">P = V·I</text>
-    <text x="900" y="160">dq 坐标系</text>
-    <text x="120" y="500">VSC-HVDC</text>
-    <text x="820" y="520">GFM · GFL</text>
+  <g transform="translate(0, 60)">
+    <circle cx="200" cy="300" r="8" fill="rgba(168, 214, 226, 0.16)"/>
+    <circle cx="200" cy="300" r="3.5" fill="rgba(222, 244, 249, 0.75)"/>
+    <circle cx="520" cy="300" r="8" fill="rgba(168, 214, 226, 0.16)"/>
+    <circle cx="520" cy="300" r="3.5" fill="rgba(222, 244, 249, 0.75)"/>
+    <circle cx="980" cy="320" r="8" fill="rgba(168, 214, 226, 0.16)"/>
+    <circle cx="980" cy="320" r="3.5" fill="rgba(222, 244, 249, 0.75)"/>
+    <circle cx="640" cy="320" r="8" fill="rgba(168, 214, 226, 0.16)"/>
+    <circle cx="640" cy="320" r="3.5" fill="rgba(222, 244, 249, 0.75)"/>
+  </g>
+
+  <!-- 电气工程技术符号：浅蓝灰、可辨识但不抢主标题 -->
+  <g fill="#bbd7e4" opacity="0.48" font-family="'JetBrains Mono', Consolas, monospace" font-size="15" letter-spacing="0.5">
+    <text x="170" y="120">P = V · I</text>
+    <text x="920" y="150">dq 坐标系</text>
+    <text x="470" y="540">VSC-HVDC</text>
+    <text x="650" y="560">GFM / GFL</text>
   </g>
 </svg>

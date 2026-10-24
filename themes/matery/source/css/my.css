@@ -9,23 +9,23 @@
     max-width: 980px;
     margin: 0.75rem auto 2rem;
     padding: 1.75rem 2rem;
-    border: 1px solid rgba(38, 112, 95, 0.18);
+    border: 1px solid rgba(30, 58, 95, 0.18);
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(232, 247, 240, 0.92) 0%, rgba(255, 255, 255, 0.98) 58%);
-    box-shadow: 0 12px 34px rgba(31, 86, 72, 0.1);
+    background: linear-gradient(135deg, rgba(239, 246, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 58%);
+    box-shadow: 0 12px 34px rgba(30, 58, 95, 0.1);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .my-projects .project-card--featured:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 42px rgba(31, 86, 72, 0.16);
+    box-shadow: 0 18px 42px rgba(30, 58, 95, 0.16);
 }
 
 .my-projects .project-card--featured .icon {
     width: 78px;
     height: 78px;
     line-height: 78px;
-    box-shadow: 0 9px 24px rgba(27, 94, 85, 0.22);
+    box-shadow: 0 9px 24px rgba(30, 58, 95, 0.22);
 }
 
 .my-projects .project-card--featured .info-title {
@@ -36,7 +36,7 @@
 .my-projects .project-card--featured .info-desc {
     max-width: 690px;
     margin-bottom: 0.9rem;
-    color: #60726c;
+    color: #334155;
     line-height: 1.75;
 }
 
@@ -51,10 +51,10 @@
     align-items: center;
     min-height: 24px;
     padding: 0.2rem 0.65rem;
-    border: 1px solid rgba(38, 112, 95, 0.18);
+    border: 1px solid rgba(30, 58, 95, 0.2);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.76);
-    color: #2f685a;
+    background: rgba(239, 246, 255, 0.9);
+    color: #2563eb;
     font-size: 0.72rem;
     line-height: 1.2;
 }
@@ -84,25 +84,25 @@
 }
 
 .project-action:focus-visible {
-    outline: 3px solid rgba(67, 160, 71, 0.32);
+    outline: 3px solid rgba(59, 130, 246, 0.32);
     outline-offset: 3px;
 }
 
 .project-action--primary {
-    background: linear-gradient(135deg, #1b5e55 0%, #43a047 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     color: #fff !important;
-    box-shadow: 0 7px 18px rgba(27, 94, 85, 0.2);
+    box-shadow: 0 7px 18px rgba(30, 58, 95, 0.22);
 }
 
 .project-action--secondary {
-    border: 1px solid rgba(52, 73, 94, 0.2);
+    border: 1px solid rgba(30, 58, 95, 0.24);
     background: #fff;
-    color: #34495e !important;
+    color: #1e3a5f !important;
 }
 
 body.DarkMode .my-projects .project-card--featured {
-    border-color: rgba(129, 199, 132, 0.22);
-    background: linear-gradient(135deg, rgba(29, 66, 58, 0.92) 0%, rgba(40, 44, 46, 0.98) 62%);
+    border-color: rgba(96, 165, 250, 0.22);
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.92) 0%, rgba(40, 44, 46, 0.98) 62%);
 }
 
 body.DarkMode .my-projects .project-card--featured .info-desc,
@@ -277,30 +277,30 @@ body.DarkMode .project-action--secondary {
 }
 
 /* ========== 首页项目卡精修（Vercel / Linear 风格，仅 #indexProjects 作用域） ========== */
-/* 每张卡独立主题色：1 蓝紫 / 2 青蓝 / 3 绿，只用于强调线、图标、hover 阴影、Label */
+/* 每张卡独立主题色：1 科技蓝 / 2 深海蓝 / 3 亮蓝，只用于强调线、图标、hover 阴影、Label */
 #indexProjects .my-projects .row > .col:nth-child(1) {
-    --accent-1: #6366f1;
-    --accent-grad: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --accent-bg: rgba(99, 102, 241, 0.09);
-    --accent-shadow: rgba(99, 102, 241, 0.16);
+    --accent-1: #2563eb;
+    --accent-grad: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    --accent-bg: rgba(37, 99, 235, 0.09);
+    --accent-shadow: rgba(30, 58, 95, 0.18);
     --card-bg: url('/medias/featureimages/2.jpg');
     --card-overlay: linear-gradient(160deg, rgba(52, 54, 84, 0.62) 0%, rgba(52, 54, 84, 0.54) 60%, rgba(52, 54, 84, 0.6) 100%);
 }
 
 #indexProjects .my-projects .row > .col:nth-child(2) {
-    --accent-1: #0891b2;
-    --accent-grad: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-    --accent-bg: rgba(6, 182, 212, 0.09);
-    --accent-shadow: rgba(6, 182, 212, 0.16);
+    --accent-1: #1e3a5f;
+    --accent-grad: linear-gradient(135deg, #1e3a5f 0%, #315c79 100%);
+    --accent-bg: rgba(30, 58, 95, 0.1);
+    --accent-shadow: rgba(30, 58, 95, 0.18);
     --card-bg: url('/medias/featureimages/5.jpg');
     --card-overlay: linear-gradient(160deg, rgba(22, 44, 74, 0.62) 0%, rgba(22, 44, 74, 0.54) 60%, rgba(22, 44, 74, 0.6) 100%);
 }
 
 #indexProjects .my-projects .row > .col:nth-child(3) {
-    --accent-1: #059669;
-    --accent-grad: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    --accent-bg: rgba(16, 185, 129, 0.09);
-    --accent-shadow: rgba(16, 185, 129, 0.16);
+    --accent-1: #3b82f6;
+    --accent-grad: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    --accent-bg: rgba(59, 130, 246, 0.09);
+    --accent-shadow: rgba(30, 58, 95, 0.16);
     --card-bg: url('/medias/featureimages/0.jpg');
     --card-overlay: linear-gradient(160deg, rgba(16, 48, 46, 0.62) 0%, rgba(16, 48, 46, 0.54) 60%, rgba(16, 48, 46, 0.6) 100%);
 }

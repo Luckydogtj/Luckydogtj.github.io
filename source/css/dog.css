@@ -1,47 +1,158 @@
 /* ============================================================
    Dog Blog 自定义样式 —— 科技蓝主题覆盖
    仅覆盖 Matery 主题的主色与卡片细节，不重写布局。
+   调色板：
+     交互 #2563EB / 标题深蓝 #1E3A5F / 亮蓝 #3B82F6
+     页面浅底 #F8FAFC / 浅蓝色块 #EFF6FF / 正文 #334155
+     导航底边 #E2E8F0
    ============================================================ */
 
 :root {
-  --dog-primary: #1565c0;        /* 主色：科技蓝 */
-  --dog-primary-dark: #0d47a1;   /* 深蓝 */
-  --dog-primary-light: #42a5f5;  /* 浅蓝 */
-  --dog-accent: #00838f;         /* 辅助色：青绿 */
-  --dog-card-shadow: 0 4px 20px rgba(21, 101, 192, 0.12);
+  --dog-primary: #2563eb;        /* 交互蓝 */
+  --dog-primary-dark: #1e3a5f;   /* 标题深蓝 */
+  --dog-primary-light: #3b82f6;  /* 亮蓝点缀 */
+  --dog-hover: #1d4ed8;          /* 悬停加深 */
+  --dog-bg-light: #f8fafc;       /* 页面浅背景 */
+  --dog-tint: #eff6ff;           /* 浅蓝色块（标签、引用） */
+  --dog-text: #334155;           /* 正文颜色 */
+  --dog-card: #ffffff;           /* 卡片背景 */
+  --dog-card-shadow: 0 4px 20px rgba(30, 58, 95, 0.1);
+  --dog-nav-bg: #f8fafc;         /* 导航背景 */
+  --dog-nav-text: #3b5878;       /* 导航文字 */
+  --dog-nav-border: #e2e8f0;     /* 导航底边框 */
 }
 
-/* 页面整体背景：与 bg.svg 基底色一致，避免未加载时出现灰色 */
+/* 页面整体背景：浅蓝灰，替代默认灰白 */
 body {
-  background-color: #f4f8fc !important;
+  background-color: var(--dog-bg-light) !important;
+  color: var(--dog-text);
 }
 
-/* 导航栏 / 页脚 / 主题色背景 */
+/* 内容区标题统一为沉稳深蓝 */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content .title {
+  color: var(--dog-primary-dark);
+}
+
+/* 导航栏 / 页脚 / 标签 / 分页 / TOC 等统一品牌渐变 */
 .bg-color {
   background-color: var(--dog-primary) !important;
+  background-image: linear-gradient(135deg, var(--dog-primary) 0%, var(--dog-primary-dark) 100%) !important;
 }
 .bg-color-second {
   background-color: var(--dog-primary-dark) !important;
 }
 
-/* 顶栏在未滚动时为半透明蓝（覆盖 matery 默认全透明），保持科技蓝基调 */
-header .nav-transparent {
-  background-color: rgba(21, 101, 192, 0.55) !important;
-  backdrop-filter: blur(6px);
+/* ===== 顶部导航：浅色导航栏 =====
+   注意：不要使用 backdrop-filter / filter，它们会让固定定位的
+   移动端侧边栏以导航栏为包含块，导致菜单高度被压成 116px。 */
+#headNav,
+#headNav.nav-transparent,
+header nav#headNav.bg-color {
+  background-color: var(--dog-nav-bg) !important;
+  background-image: none !important;
+  box-shadow: 0 1px 0 var(--dog-nav-border), 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Logo 与导航文字：明亮蓝灰；悬停为交互蓝 */
+header nav .brand-logo,
+header nav .brand-logo a,
+header nav ul a,
+header .button-collapse i,
+#searchIcon {
+  color: var(--dog-nav-text);
+}
+header nav .brand-logo .logo-span {
+  color: var(--dog-primary);
+  font-weight: 600;
+}
+/* 白色线稿 Logo 在浅色导航上不可见，用品牌蓝底色承载 */
+header .brand-logo .logo-img,
+#mobile-nav .mobile-head .logo-img {
+  background-color: var(--dog-primary);
+  border-radius: 8px;
+}
+header nav ul a {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+header nav ul a:hover,
+header nav ul a:hover i {
+  color: var(--dog-primary) !important;
+  background-color: var(--dog-tint);
+}
+
+/* 当前页面导航高亮（类名由 navigation.ejs 中的小脚本添加） */
+header nav ul a.nav-current,
+header nav ul a.nav-current i {
+  color: var(--dog-primary) !important;
+  font-weight: 600;
+}
+header nav ul a.nav-current {
+  background-color: var(--dog-tint);
+}
+
+/* 移动端侧边导航：浅色头部，与桌面导航一致 */
+#mobile-nav .mobile-head.bg-color {
+  background-color: var(--dog-nav-bg) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--dog-nav-border);
+}
+#mobile-nav .mobile-head .logo-name {
+  color: var(--dog-primary) !important;
+}
+#mobile-nav .mobile-head .logo-desc {
+  color: #64748b !important;
+}
+#mobile-nav .menu-list a,
+#mobile-nav .menu-list a i {
+  color: var(--dog-nav-text) !important;
+}
+#mobile-nav .menu-list a:hover,
+#mobile-nav .menu-list a.nav-current {
+  background-color: var(--dog-tint) !important;
+  color: var(--dog-primary) !important;
+}
+#mobile-nav .menu-list a:hover i,
+#mobile-nav .menu-list a.nav-current i {
+  color: var(--dog-primary) !important;
+}
+
+/* 顶部滚动进度条 */
+.progress-bar {
+  background: linear-gradient(to right, var(--dog-primary) 0%, var(--dog-primary-light) 100%) !important;
 }
 
 /* 按钮 */
 .btn,
 .btn-large {
   background-color: var(--dog-primary) !important;
-  box-shadow: 0 2px 6px rgba(21, 101, 192, 0.3) !important;
+  box-shadow: 0 2px 6px rgba(30, 58, 95, 0.3) !important;
 }
 .btn:hover,
 .btn-large:hover {
-  background-color: var(--dog-primary-dark) !important;
+  background-color: var(--dog-hover) !important;
 }
 .btn-floating {
   background-color: var(--dog-primary) !important;
+}
+
+/* Banner 主按钮：简洁描边风格 + 克制的悬停反馈 */
+.bg-cover .cover-btns a,
+.bg-cover .cover-btns a.btn {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.bg-cover .cover-btns a:hover {
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(15, 45, 75, 0.22) !important;
 }
 
 /* 链接与高亮 */
@@ -49,24 +160,112 @@ a {
   color: var(--dog-primary);
 }
 a:hover {
-  color: var(--dog-primary-dark);
+  color: var(--dog-hover);
 }
 .post-category,
-.post-category:hover {
+.post-category:hover,
+#artDetail .post-cate,
+#artDetail .post-info .post-category:hover {
   color: var(--dog-primary);
 }
+#articleContent a,
+#artDetail .reprint a,
+#artDetail .post-cate a,
+.post-statis .statis .count a {
+  color: var(--dog-primary);
+}
+#articleContent a:hover,
+article a:hover {
+  color: var(--dog-hover);
+}
+/* 引用块：主题原为浅绿底 + 绿边框，统一为浅蓝底 + 蓝边框 */
+blockquote {
+  border-left-color: var(--dog-primary);
+  background-color: rgba(37, 99, 235, 0.06);
+  color: var(--dog-text);
+}
+
+/* 文章标签 chip：统一科技蓝 */
 .article-tags .chip.bg-color {
   background-color: var(--dog-primary) !important;
+  background-image: none !important;
+}
+#artDetail .tag_share .article-tag .chip {
+  color: var(--dog-primary);
+}
+#artDetail .tag_share .article-tag .chip:hover {
+  background: var(--dog-primary);
+}
+
+/* 分类/标签页 chip 交互态 */
+.chip-container .chip-default {
+  color: var(--dog-text);
+}
+.chip-container .chip:hover,
+.chip-container .chip-active {
+  color: #fff !important;
+  background: linear-gradient(to right, var(--dog-primary) 0%, var(--dog-primary-light) 100%) !important;
+}
+.chip-default .tag-length {
+  color: var(--dog-primary-light);
+}
+
+/* 归档时间轴：蓝阶替代橙红 */
+#cd-timeline::before {
+  background: var(--dog-primary);
+}
+#cd-timeline .year {
+  background-color: var(--dog-primary-dark);
+}
+#cd-timeline .month {
+  background-color: var(--dog-primary);
+}
+#cd-timeline .day {
+  background-color: var(--dog-primary-light);
+}
+
+/* 上一篇 / 下一篇徽标 */
+.text-color {
+  color: var(--dog-primary) !important;
+}
+
+/* 关于页社交图标 */
+#aboutme .social-link a {
+  border-color: var(--dog-primary-dark);
+  background: linear-gradient(135deg, var(--dog-primary) 0%, var(--dog-primary-light) 100%);
+}
+
+/* 搜索框 */
+#searchModal .search-header .title {
+  color: var(--dog-primary-dark);
+}
+#searchInput:focus {
+  border-bottom: 1px solid var(--dog-primary) !important;
+  box-shadow: 0 1px 0 0 var(--dog-primary) !important;
+}
+.search-result-list .search-result-title {
+  color: var(--dog-primary);
+}
+.search-result-list .search-keyword {
+  background-color: #dbeafe;
+  color: var(--dog-primary-dark);
+}
+
+/* 回到顶部按钮：作用于实际的圆形按钮元素 */
+#backTop .btn-floating {
+  background: linear-gradient(135deg, var(--dog-primary) 0%, var(--dog-primary-light) 100%) !important;
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.35) !important;
 }
 
 /* 卡片阴影与悬停 */
 .card {
+  background-color: var(--dog-card);
   border-radius: 8px;
   box-shadow: var(--dog-card-shadow);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .card:hover {
-  box-shadow: 0 8px 28px rgba(21, 101, 192, 0.18);
+  box-shadow: 0 8px 28px rgba(30, 58, 95, 0.18);
 }
 .article .card:hover {
   transform: translateY(-3px);
@@ -77,6 +276,14 @@ a:hover {
 .bg-cover .description,
 .bg-cover .cover-btns .btn {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+.bg-cover .description {
+  color: rgba(219, 234, 254, 0.92);
+}
+/* Banner 与内容区之间保持自然过渡：页脚使用更深的蓝 */
+footer.bg-color,
+.page-footer.bg-color {
+  background-image: linear-gradient(135deg, var(--dog-primary-dark) 0%, #315c79 100%) !important;
 }
 
 /* 章节标题图标色 */
@@ -92,7 +299,7 @@ a:hover {
   margin-top: 20px;
 }
 .dog-card {
-  background: #fff;
+  background: var(--dog-card);
   border-radius: 10px;
   padding: 22px;
   box-shadow: var(--dog-card-shadow);
@@ -101,7 +308,7 @@ a:hover {
 }
 .dog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(21, 101, 192, 0.18);
+  box-shadow: 0 10px 30px rgba(30, 58, 95, 0.18);
 }
 .dog-card h3 {
   margin: 0 0 10px;
@@ -109,12 +316,12 @@ a:hover {
   font-size: 1.3rem;
 }
 .dog-card .dog-card-meta {
-  color: #78909c;
+  color: #64748b;
   font-size: 0.85rem;
   margin-bottom: 12px;
 }
 .dog-card p {
-  color: #455a64;
+  color: var(--dog-text);
   line-height: 1.7;
   margin: 8px 0;
 }
@@ -123,7 +330,7 @@ a:hover {
 }
 .dog-card .dog-tag {
   display: inline-block;
-  background: #e3f2fd;
+  background: var(--dog-tint);
   color: var(--dog-primary);
   border-radius: 12px;
   padding: 2px 12px;
@@ -141,7 +348,7 @@ a:hover {
   margin: 8px 0 12px;
 }
 .dog-intro-desc {
-  color: #455a64;
+  color: var(--dog-text);
   line-height: 1.8;
   margin: 0 auto 10px;
   max-width: 900px;
@@ -163,7 +370,7 @@ a:hover {
 /* 通用标签（首页与卡片共用） */
 .dog-tag {
   display: inline-block;
-  background: #e3f2fd;
+  background: var(--dog-tint);
   color: var(--dog-primary);
   border-radius: 12px;
   padding: 2px 12px;
@@ -183,7 +390,7 @@ a:hover {
 }
 .dog-timeline-item {
   padding: 12px 0 12px 20px;
-  border-left: 2px solid #bbdefb;
+  border-left: 2px solid #bfdbfe;
   margin-left: 8px;
   position: relative;
 }
@@ -202,19 +409,26 @@ a:hover {
   color: var(--dog-primary-dark);
 }
 .dog-timeline-item .dog-date {
-  color: #78909c;
+  color: #64748b;
   font-size: 0.85rem;
+}
+
+/* 关于页正文 */
+.dog-about-content {
+  color: var(--dog-text);
+}
+
+/* 关于页「其他技能」chip */
+.other-skills .chip:hover {
+  color: #fff;
+  background: linear-gradient(to right, var(--dog-primary) 0%, var(--dog-primary-light) 100%);
+  border-color: var(--dog-primary);
 }
 
 /* 标签云颜色 */
 .tag-cloud a:hover,
 .jqcloud a:hover {
   color: var(--dog-primary) !important;
-}
-
-/* 回到顶部按钮 */
-#backTop.top-scroll {
-  background-color: var(--dog-primary) !important;
 }
 
 /* 响应式：小屏卡片单列 */
