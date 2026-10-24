@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Simulink 电力电子系统仿真的常用技巧</title>
+      <link href="/2026/07/22/simulink-dian-li-dian-zi-fang-zhen-chang-yong-ji-qiao/"/>
+      <url>/2026/07/22/simulink-dian-li-dian-zi-fang-zhen-chang-yong-ji-qiao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-仿真器选择"><a href="#1-仿真器选择" class="headerlink" title="1. 仿真器选择"></a>1. 仿真器选择</h2><table><thead><tr><th>场景</th><th>推荐工具</th></tr></thead><tbody><tr><td>系统级控制策略验证</td><td>Simulink（连续 / 离散）</td></tr><tr><td>器件级开关行为</td><td>Simscape Electrical（Specialized Power Systems）</td></tr><tr><td>电磁暂态精确仿真</td><td>PLECS Blockset / PSCAD</td></tr></tbody></table><h2 id="2-建模技巧"><a href="#2-建模技巧" class="headerlink" title="2. 建模技巧"></a>2. 建模技巧</h2><h3 id="2-1-平均值模型"><a href="#2-1-平均值模型" class="headerlink" title="2.1 平均值模型"></a>2.1 平均值模型</h3><p>在控制策略设计阶段，可使用开关周期平均值模型替代详细开关模型，大幅提高仿真速度。例如 Buck 变换器可建模为受控电压源 <code>d * Vg</code>。</p><h3 id="2-2-离散化"><a href="#2-2-离散化" class="headerlink" title="2.2 离散化"></a>2.2 离散化</h3><p>数字控制环路需设置合适的采样时间 <code>Ts</code>，并使用 <code>zoh</code> 离散化方法。控制算法放在触发子系统中，由定时器触发。</p><h3 id="2-3-求解器"><a href="#2-3-求解器" class="headerlink" title="2.3 求解器"></a>2.3 求解器</h3><ul><li><strong>连续系统</strong>：<code>ode23tb</code> 或 <code>ode15s</code>（刚性系统）。</li><li><strong>含开关</strong>：使用变步长求解器并设置较小的最大步长。</li><li>启用 <strong>Simscape 的局部求解器</strong> 可加速刚性电力电子仿真。</li></ul><h2 id="3-常见问题"><a href="#3-常见问题" class="headerlink" title="3. 常见问题"></a>3. 常见问题</h2><h3 id="3-1-仿真不收敛"><a href="#3-1-仿真不收敛" class="headerlink" title="3.1 仿真不收敛"></a>3.1 仿真不收敛</h3><ul><li>检查代数环，可加入 <code>Memory</code> 或单位延迟打破。</li><li>减小求解器相对误差（如 <code>1e-4</code>）。</li><li>检查初始条件是否合理。</li></ul><h3 id="3-2-开关瞬间数值振荡"><a href="#3-2-开关瞬间数值振荡" class="headerlink" title="3.2 开关瞬间数值振荡"></a>3.2 开关瞬间数值振荡</h3><ul><li>在开关管两端并联 RC 缓冲（snubber），或调整开关模块自带的缓冲参数。</li><li>减小求解器最大步长（必要时改用刚性求解器）。</li></ul><h3 id="3-3-采样噪声"><a href="#3-3-采样噪声" class="headerlink" title="3.3 采样噪声"></a>3.3 采样噪声</h3><ul><li>ADC 采样加入量化模块，反映实际分辨率。</li><li>可添加高斯噪声模块模拟传感器噪声，验证控制器鲁棒性。</li></ul><h2 id="4-结果后处理"><a href="#4-结果后处理" class="headerlink" title="4. 结果后处理"></a>4. 结果后处理</h2><p>使用 <code>simout</code> 将信号导出到 MATLAB workspace，通过脚本批量绘制波形、计算 THD、效率等指标。</p><h2 id="5-推荐资源"><a href="#5-推荐资源" class="headerlink" title="5. 推荐资源"></a>5. 推荐资源</h2><ul><li>MathWorks 官方文档：Simscape Electrical</li><li>《电力电子系统建模与仿真——基于 MATLAB》</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 仿真与编程 </category>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MATLAB </tag>
+            
+            <tag> Simulink </tag>
+            
+            <tag> Simscape </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PCB 设计中功率回路与信号回路的分区原则</title>
+      <link href="/2026/06/18/pcb-she-ji-zhong-gong-lu-yu-xin-hao-hui-lu-fen-qu-yuan-ze/"/>
+      <url>/2026/06/18/pcb-she-ji-zhong-gong-lu-yu-xin-hao-hui-lu-fen-qu-yuan-ze/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-分区的必要性"><a href="#1-分区的必要性" class="headerlink" title="1. 分区的必要性"></a>1. 分区的必要性</h2><p>电力电子 PCB 同时存在<strong>大电流、高 dv/dt 的功率回路</strong>与<strong>小信号、低噪声的控制回路</strong>。若布局不当，功率回路的噪声会耦合到控制回路，导致驱动误触发、采样漂移甚至系统不稳定。</p><h2 id="2-分区原则"><a href="#2-分区原则" class="headerlink" title="2. 分区原则"></a>2. 分区原则</h2><h3 id="2-1-物理分区"><a href="#2-1-物理分区" class="headerlink" title="2.1 物理分区"></a>2.1 物理分区</h3><p>将 PCB 划分为：</p><ol><li><strong>功率区</strong>：开关管、二极管、电感、变压器、大电容、采样电阻。</li><li><strong>驱动区</strong>：栅极驱动 IC、驱动电阻、隔离器件。</li><li><strong>控制区</strong>：MCU / DSP、运放、ADC、光耦。</li><li><strong>辅助电源区</strong>：反激 / 正激电源、LDO。</li></ol><p>各区之间保持一定间距，功率区与控制区之间可用接地铜皮或开槽隔离。</p><h3 id="2-2-接地策略"><a href="#2-2-接地策略" class="headerlink" title="2.2 接地策略"></a>2.2 接地策略</h3><ul><li><strong>功率地（PGND）</strong>：承载大电流，使用大面积铺铜。</li><li><strong>信号地（AGND）</strong>：小信号回路参考地。</li><li>单点连接：PGND 与 AGND 在 ADC 采样参考点或主滤波电容处单点连接，避免地环路。</li></ul><h3 id="2-3-采样回路"><a href="#2-3-采样回路" class="headerlink" title="2.3 采样回路"></a>2.3 采样回路</h3><ul><li>电流采样（如分流电阻）的信号线采用<strong>开尔文连接</strong>，从采样电阻两端直接引出，避免功率电流在走线上产生压降。</li><li>电压采样分压电阻靠近 ADC 输入端放置，缩短高阻抗走线长度。</li></ul><h2 id="3-栅极驱动布线"><a href="#3-栅极驱动布线" class="headerlink" title="3. 栅极驱动布线"></a>3. 栅极驱动布线</h2><ul><li>驱动回路面积尽量小（驱动电阻 → 栅极 → 源极 → 驱动地）。</li><li>栅极与源极走线成对紧耦合，降低回路电感。</li><li>驱动地与功率地在开关管源极就近连接。</li></ul><h2 id="4-去耦电容"><a href="#4-去耦电容" class="headerlink" title="4. 去耦电容"></a>4. 去耦电容</h2><ul><li>每个 IC 的电源引脚旁放置 0.1 μF 陶瓷电容。</li><li>功率级输入端放置大容量电解电容 + 高频陶瓷电容，减小母线纹波。</li><li>电容尽量靠近开关管的漏-源回路。</li></ul><h2 id="5-检查清单"><a href="#5-检查清单" class="headerlink" title="5. 检查清单"></a>5. 检查清单</h2><ul><li><input disabled="" type="checkbox"> 功率回路面积最小化</li><li><input disabled="" type="checkbox"> 采样线远离功率走线</li><li><input disabled="" type="checkbox"> PGND / AGND 单点接地</li><li><input disabled="" type="checkbox"> 驱动回路紧凑</li><li><input disabled="" type="checkbox"> 去耦电容位置合理</li><li><input disabled="" type="checkbox"> 大电流走线宽度 / 过孔数量满足载流要求</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> PCB 与硬件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PCB </tag>
+            
+            <tag> 电力电子 </tag>
+            
+            <tag> EMC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Buck 变换器的小信号建模与补偿器设计</title>
+      <link href="/2026/05/10/buck-bian-huan-qi-xiao-xin-hao-jian-mo-yu-bu-chang-qi-she-ji/"/>
+      <url>/2026/05/10/buck-bian-huan-qi-xiao-xin-hao-jian-mo-yu-bu-chang-qi-she-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-为什么需要小信号建模"><a href="#1-为什么需要小信号建模" class="headerlink" title="1. 为什么需要小信号建模"></a>1. 为什么需要小信号建模</h2><p>电力电子变换器是强非线性的时变系统。为进行控制器设计，需在稳态工作点附近进行线性化，得到小信号模型。</p><h2 id="2-状态空间平均法"><a href="#2-状态空间平均法" class="headerlink" title="2. 状态空间平均法"></a>2. 状态空间平均法</h2><p>Buck 变换器在连续导通模式（CCM）下：</p><ul><li><strong>导通阶段（0 ~ dTs）</strong>：电感电流上升，<code>L di/dt = Vg - Vo</code>，输入经电感向负载与电容供能。</li><li><strong>关断阶段（dTs ~ Ts）</strong>：电感电流下降，<code>L di/dt = -Vo</code>。</li></ul><p>对状态变量 <code>iL</code>、<code>vC</code> 取平均并加入小信号扰动，经整理可得控制到输出的传递函数 <code>Gvd(s)</code>。在忽略电感等效电阻与电容 ESR 的理想条件下，Buck CCM 的标准形式为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gvd(s) = Vg / (1 + s/(Q*ω0) + (s/ω0)^2)</span><br></pre></td></tr></table></figure><p>其中 <code>ω0 = 1/√(LC)</code>，<code>Q = R√(C/L)</code>，直流增益为 <code>Vg</code>。</p><p>考虑电容 ESR 时，传递函数增加一个零点：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gvd(s) = Vg * (1 + s*ESR*C) / (1 + s/(Q*ω0) + (s/ω0)^2)</span><br></pre></td></tr></table></figure><h2 id="3-环路补偿"><a href="#3-环路补偿" class="headerlink" title="3. 环路补偿"></a>3. 环路补偿</h2><h3 id="3-1-性能指标"><a href="#3-1-性能指标" class="headerlink" title="3.1 性能指标"></a>3.1 性能指标</h3><ul><li>相位裕度 ≥ 45°</li><li>增益裕度 ≥ 10 dB</li><li>带宽约为开关频率的 1/10 ~ 1/5</li></ul><h3 id="3-2-Type-II-补偿器"><a href="#3-2-Type-II-补偿器" class="headerlink" title="3.2 Type-II 补偿器"></a>3.2 Type-II 补偿器</h3><p>适用于电流模式控制（单极点特性）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gc(s) = K * (1 + s/ωz1) / (s * (1 + s/ωp1))</span><br></pre></td></tr></table></figure><h3 id="3-3-Type-III-补偿器"><a href="#3-3-Type-III-补偿器" class="headerlink" title="3.3 Type-III 补偿器"></a>3.3 Type-III 补偿器</h3><p>适用于电压模式控制（双极点特性），提供两个零点补偿 LC 谐振峰：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gc(s) = K * (1 + s/ωz1)(1 + s/ωz2) / (s * (1 + s/ωp1)(1 + s/ωp2))</span><br></pre></td></tr></table></figure><h2 id="4-MATLAB-验证"><a href="#4-MATLAB-验证" class="headerlink" title="4. MATLAB 验证"></a>4. MATLAB 验证</h2><p>可使用 <code>sisotool</code> 或 <code>bode</code> 命令绘制开环传递函数伯德图，调整补偿器零极点位置以满足裕度要求。</p><h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5. 注意事项"></a>5. 注意事项</h2><ul><li>实际电路中 ESR 会引入一个零点，不可忽略。</li><li>数字控制带来的延时（一拍滞后）会降低相位裕度，建模时需乘以 <code>e^(-sTd)</code>。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电力电子 </category>
+          
+          <category> 仿真与编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Buck </tag>
+            
+            <tag> 小信号建模 </tag>
+            
+            <tag> 环路补偿 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MMC 模块化多电平换流器工作原理</title>
+      <link href="/2026/04/02/mmc-mo-kuai-hua-duo-dian-ping-huan-liu-qi-gong-zuo-yuan-li/"/>
+      <url>/2026/04/02/mmc-mo-kuai-hua-duo-dian-ping-huan-liu-qi-gong-zuo-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-MMC-拓扑"><a href="#1-MMC-拓扑" class="headerlink" title="1. MMC 拓扑"></a>1. MMC 拓扑</h2><p>模块化多电平换流器（Modular Multilevel Converter, MMC）由六个桥臂组成，每个桥臂由 N 个半桥子模块（Submodule, SM）与一个桥臂电感串联而成。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     上桥臂 (N 个 SM + L_arm)</span><br><span class="line">       │</span><br><span class="line">相输出 ─┤</span><br><span class="line">       │</span><br><span class="line">     下桥臂 (N 个 SM + L_arm)</span><br></pre></td></tr></table></figure><p>通过投入不同数量的子模块，可在交流侧逼近正弦波。电平数为 <code>2N+1</code>。</p><h2 id="2-子模块工作状态"><a href="#2-子模块工作状态" class="headerlink" title="2. 子模块工作状态"></a>2. 子模块工作状态</h2><p>半桥子模块由两个 IGBT（T1、T2）、两个反并联二极管与一个电容 C 组成：</p><ul><li><strong>投入状态</strong>：T1 导通，T2 关断，电容接入回路，输出电压为 +Uc（半桥子模块仅能输出 0 或 +Uc，无法输出负电压）。</li><li><strong>切除状态</strong>：T1 关断，T2 导通，电容旁路，输出电压为 0。</li><li><strong>闭锁状态</strong>：T1、T2 均关断，通过二极管旁路。</li></ul><h2 id="3-调制策略"><a href="#3-调制策略" class="headerlink" title="3. 调制策略"></a>3. 调制策略</h2><p>常用<strong>最近电平逼近调制（NLM）</strong>：根据参考电压选择投入最接近电平数的子模块。在高电平数（N 较大）场合，NLM 无需高频载波即可获得较低的谐波含量。</p><h2 id="4-电容电压均压"><a href="#4-电容电压均压" class="headerlink" title="4. 电容电压均压"></a>4. 电容电压均压</h2><p>子模块电容电压需要保持均衡。常用方法：</p><ol><li><strong>排序法</strong>：每个控制周期对所有子模块电容电压排序，根据桥臂电流方向优先投入电压最低（或最高）的子模块。</li><li><strong>均衡控制</strong>：引入均压系数，通过 PI 调节使各子模块电压收敛到平均值。</li></ol><h2 id="5-环流抑制"><a href="#5-环流抑制" class="headerlink" title="5. 环流抑制"></a>5. 环流抑制</h2><p>MMC 三相之间存在内部环流（主要为二倍频负序分量），会增加器件损耗。通常通过在 dq 坐标系下提取二倍频负序电流并加以闭环抑制。</p><h2 id="6-应用场景"><a href="#6-应用场景" class="headerlink" title="6. 应用场景"></a>6. 应用场景</h2><ul><li>柔性直流输电（VSC-HVDC）</li><li>新能源并网（大规模光伏 / 风电）</li><li>中高压电机驱动</li><li>静止同步补偿器（STATCOM）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电力系统 </category>
+          
+          <category> 电力电子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MMC </tag>
+            
+            <tag> VSC-HVDC </tag>
+            
+            <tag> 柔性直流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>构网型变流器(GFM-VSC)基本原理与控制</title>
+      <link href="/2026/03/15/gfm-vsc-ji-ben-yuan-li-yu-kong-zhi/"/>
+      <url>/2026/03/15/gfm-vsc-ji-ben-yuan-li-yu-kong-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-为什么需要构网型变流器"><a href="#1-为什么需要构网型变流器" class="headerlink" title="1. 为什么需要构网型变流器"></a>1. 为什么需要构网型变流器</h2><p>随着新能源渗透率不断提高，传统同步机占比下降，电力系统的惯量与阻尼减弱。<strong>跟随型变流器（Grid-Following, GFL）</strong>依赖电网电压进行锁相，在弱电网下容易出现稳定性问题。</p><p><strong>构网型变流器（Grid-Forming, GFM）</strong>通过主动建立电压与频率，具备类似同步机的外特性，能够为系统提供惯量与阻尼支撑。</p><h2 id="2-GFM-与-GFL-的核心区别"><a href="#2-GFM-与-GFL-的核心区别" class="headerlink" title="2. GFM 与 GFL 的核心区别"></a>2. GFM 与 GFL 的核心区别</h2><table><thead><tr><th>特性</th><th>GFL（跟随型）</th><th>GFM（构网型）</th></tr></thead><tbody><tr><td>电压源</td><td>依赖电网</td><td>自主建立</td></tr><tr><td>锁相环</td><td>必需</td><td>可弱化或去除</td></tr><tr><td>惯量支撑</td><td>无</td><td>可提供虚拟惯量</td></tr><tr><td>弱电网适应性</td><td>较差</td><td>较强</td></tr></tbody></table><h2 id="3-典型-GFM-控制策略"><a href="#3-典型-GFM-控制策略" class="headerlink" title="3. 典型 GFM 控制策略"></a>3. 典型 GFM 控制策略</h2><h3 id="3-1-下垂控制（Droop-Control）"><a href="#3-1-下垂控制（Droop-Control）" class="headerlink" title="3.1 下垂控制（Droop Control）"></a>3.1 下垂控制（Droop Control）</h3><p>通过有功-频率（P-f）与无功-电压（Q-V）下垂特性，使变流器共享负荷并参与频率调节：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ω = ω* - m_p (P - P*)</span><br><span class="line">V = V* - n_q (Q - Q*)</span><br></pre></td></tr></table></figure><h3 id="3-2-虚拟同步机（VSG）"><a href="#3-2-虚拟同步机（VSG）" class="headerlink" title="3.2 虚拟同步机（VSG）"></a>3.2 虚拟同步机（VSG）</h3><p>在控制环路中引入虚拟转子运动方程：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J dω/dt = (Pm - Pe)/ω - D(ω - ωg)</span><br></pre></td></tr></table></figure><p>其中 <code>J</code> 为虚拟惯量，<code>D</code> 为阻尼系数，使变流器具备与同步机相似的频率响应特性。</p><h2 id="4-关键挑战"><a href="#4-关键挑战" class="headerlink" title="4. 关键挑战"></a>4. 关键挑战</h2><ul><li><strong>功率耦合</strong>：在低压电网中阻性线路导致有功无功耦合，需做解耦控制。</li><li><strong>环流抑制</strong>：多台 GFM 并联时需抑制环流。</li><li><strong>故障穿越</strong>：构网型变流器需具备限流与故障穿越能力。</li></ul><h2 id="5-参考方向"><a href="#5-参考方向" class="headerlink" title="5. 参考方向"></a>5. 参考方向</h2><ul><li>构网型变流器控制策略（下垂控制、虚拟同步机）相关综述</li><li>构网型与跟随型变流器的弱电网稳定性对比分析</li></ul><blockquote><p>本文为个人学习笔记，具体文献条目尚未逐条核实，暂不列出确切出处。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 构网型储能 </category>
+          
+          <category> 电力电子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GFM </tag>
+            
+            <tag> VSC </tag>
+            
+            <tag> 虚拟同步机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

@@ -1,0 +1,225 @@
+/* ============================================================
+   Dog Blog 自定义样式 —— 科技蓝主题覆盖
+   仅覆盖 Matery 主题的主色与卡片细节，不重写布局。
+   ============================================================ */
+
+:root {
+  --dog-primary: #1565c0;        /* 主色：科技蓝 */
+  --dog-primary-dark: #0d47a1;   /* 深蓝 */
+  --dog-primary-light: #42a5f5;  /* 浅蓝 */
+  --dog-accent: #00838f;         /* 辅助色：青绿 */
+  --dog-card-shadow: 0 4px 20px rgba(21, 101, 192, 0.12);
+}
+
+/* 页面整体背景：与 bg.svg 基底色一致，避免未加载时出现灰色 */
+body {
+  background-color: #f4f8fc !important;
+}
+
+/* 导航栏 / 页脚 / 主题色背景 */
+.bg-color {
+  background-color: var(--dog-primary) !important;
+}
+.bg-color-second {
+  background-color: var(--dog-primary-dark) !important;
+}
+
+/* 顶栏在未滚动时为半透明蓝（覆盖 matery 默认全透明），保持科技蓝基调 */
+header .nav-transparent {
+  background-color: rgba(21, 101, 192, 0.55) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* 按钮 */
+.btn,
+.btn-large {
+  background-color: var(--dog-primary) !important;
+  box-shadow: 0 2px 6px rgba(21, 101, 192, 0.3) !important;
+}
+.btn:hover,
+.btn-large:hover {
+  background-color: var(--dog-primary-dark) !important;
+}
+.btn-floating {
+  background-color: var(--dog-primary) !important;
+}
+
+/* 链接与高亮 */
+a {
+  color: var(--dog-primary);
+}
+a:hover {
+  color: var(--dog-primary-dark);
+}
+.post-category,
+.post-category:hover {
+  color: var(--dog-primary);
+}
+.article-tags .chip.bg-color {
+  background-color: var(--dog-primary) !important;
+}
+
+/* 卡片阴影与悬停 */
+.card {
+  border-radius: 8px;
+  box-shadow: var(--dog-card-shadow);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 28px rgba(21, 101, 192, 0.18);
+}
+.article .card:hover {
+  transform: translateY(-3px);
+}
+
+/* 首页 Banner 文字可读性 */
+.bg-cover .title,
+.bg-cover .description,
+.bg-cover .cover-btns .btn {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* 章节标题图标色 */
+.title i {
+  color: var(--dog-primary);
+}
+
+/* 科研 / 工程卡片网格（research / projects 页面） */
+.dog-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.dog-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: var(--dog-card-shadow);
+  border-top: 4px solid var(--dog-primary);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(21, 101, 192, 0.18);
+}
+.dog-card h3 {
+  margin: 0 0 10px;
+  color: var(--dog-primary-dark);
+  font-size: 1.3rem;
+}
+.dog-card .dog-card-meta {
+  color: #78909c;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.dog-card p {
+  color: #455a64;
+  line-height: 1.7;
+  margin: 8px 0;
+}
+.dog-card .dog-tags {
+  margin-top: 14px;
+}
+.dog-card .dog-tag {
+  display: inline-block;
+  background: #e3f2fd;
+  color: var(--dog-primary);
+  border-radius: 12px;
+  padding: 2px 12px;
+  font-size: 0.78rem;
+  margin: 3px 4px 0 0;
+}
+
+/* 首页个人介绍卡片 */
+.dog-intro {
+  padding: 8px 4px;
+}
+.dog-intro-title {
+  color: var(--dog-primary-dark);
+  font-size: 1.25rem;
+  margin: 8px 0 12px;
+}
+.dog-intro-desc {
+  color: #455a64;
+  line-height: 1.8;
+  margin: 0 auto 10px;
+  max-width: 900px;
+  text-align: center;
+}
+.dog-intro-block {
+  margin-top: 14px;
+  text-align: center;
+}
+.dog-intro-label {
+  color: var(--dog-primary);
+  font-weight: 600;
+  margin-right: 10px;
+}
+.dog-intro-label i {
+  margin-right: 4px;
+}
+
+/* 通用标签（首页与卡片共用） */
+.dog-tag {
+  display: inline-block;
+  background: #e3f2fd;
+  color: var(--dog-primary);
+  border-radius: 12px;
+  padding: 2px 12px;
+  font-size: 0.78rem;
+  margin: 3px 4px 0 0;
+}
+
+/* 简历信息块 */
+.dog-resume-section {
+  margin-bottom: 28px;
+}
+.dog-resume-section h2 {
+  color: var(--dog-primary-dark);
+  border-left: 4px solid var(--dog-primary);
+  padding-left: 12px;
+  font-size: 1.5rem;
+}
+.dog-timeline-item {
+  padding: 12px 0 12px 20px;
+  border-left: 2px solid #bbdefb;
+  margin-left: 8px;
+  position: relative;
+}
+.dog-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dog-primary);
+}
+.dog-timeline-item h4 {
+  margin: 0;
+  color: var(--dog-primary-dark);
+}
+.dog-timeline-item .dog-date {
+  color: #78909c;
+  font-size: 0.85rem;
+}
+
+/* 标签云颜色 */
+.tag-cloud a:hover,
+.jqcloud a:hover {
+  color: var(--dog-primary) !important;
+}
+
+/* 回到顶部按钮 */
+#backTop.top-scroll {
+  background-color: var(--dog-primary) !important;
+}
+
+/* 响应式：小屏卡片单列 */
+@media (max-width: 600px) {
+  .dog-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
