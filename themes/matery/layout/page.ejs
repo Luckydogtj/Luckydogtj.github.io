@@ -1,0 +1,17 @@
+<%- partial('_partial/bg-cover') %>
+
+<main class="content">
+
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <%- page.content %>
+                <% if (page.type === 'about' && theme.myProjects && theme.myProjects.enable) { %>
+                <div id="indexProjects">
+                    <%- partial('_widget/my-projects', { onlyFeatured: true, useShort: true }) %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</main>

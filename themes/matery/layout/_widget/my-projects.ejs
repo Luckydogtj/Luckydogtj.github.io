@@ -1,0 +1,65 @@
+<%
+// the projects information of theme _config.yml.
+var myprojects = theme.myProjects.data;
+// 首页仅展示 featured 项目时由调用方传入 onlyFeatured=true；关于页不传，展示全部。
+var projectKeys = myprojects ? Object.keys(myprojects) : [];
+if (typeof onlyFeatured !== 'undefined' && onlyFeatured) {
+    projectKeys = projectKeys.filter(function (key) { return myprojects[key].featured; });
+}
+// 首页精修模式开关：传入 useShort=true 时启用精简描述 + Label + Highlight + 轻量按钮；关于页不受影响。
+var useShortOn = (typeof useShort !== 'undefined' && useShort);
+%>
+<div class="my-projects">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fas fa-gift"></i>&nbsp;&nbsp;<%- __('myProjects') %>
+    </div>
+    <div class="row">
+        <% projectKeys.forEach(function(project) { %>
+        <% var item = myprojects[project]; %>
+        <div class="col s12 <%- item.featured ? 'l12' : 'm6 l4' %>" data-aos="fade-up">
+            <div class="info project-card <%- item.featured ? 'project-card--featured left-align' : 'center-align' %>">
+                <% if (useShortOn && item.label) { %>
+                <div class="project-label"><%- item.label %></div>
+                <% } %>
+                <a href="<%- item.demoUrl || item.url %>" class="icon"
+                   <% if (!useShortOn) { %>style="background: <%- item.iconBackground %>"<% } %> target="_blank" rel="noopener noreferrer"
+                   aria-label="打开 <%- project %>">
+                    <i class="<%- item.icon %>"></i>
+                </a>
+                <div class="project-card__content">
+                    <div class="info-title">
+                        <a href="<%- item.demoUrl || item.url %>" target="_blank" rel="noopener noreferrer"><%- project %></a>
+                    </div>
+                    <div class="info-desc">
+                        <%= (useShortOn && item.shortDesc) ? item.shortDesc : item.desc %>
+                    </div>
+                    <% if (useShortOn && item.highlight) { %>
+                    <div class="project-highlight"><%- item.highlight %></div>
+                    <% } %>
+                    <% if (item.tech && item.tech.length) { %>
+                    <div class="project-tech" aria-label="技术栈">
+                        <% item.tech.forEach(function(tech) { %>
+                        <span><%- tech %></span>
+                        <% }); %>
+                    </div>
+                    <% } %>
+                </div>
+                <% if (item.demoUrl || item.githubUrl) { %>
+                <div class="project-actions">
+                    <% if (item.demoUrl) { %>
+                    <a class="project-action project-action--primary" href="<%- item.demoUrl %>" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-rocket"></i><span><%- useShortOn ? '在线体验 →' : '在线体验' %></span>
+                    </a>
+                    <% } %>
+                    <% if (item.githubUrl) { %>
+                    <a class="project-action project-action--secondary" href="<%- item.githubUrl %>" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i><span><%- useShortOn ? 'GitHub ↗' : 'GitHub' %></span>
+                    </a>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>

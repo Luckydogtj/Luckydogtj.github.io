@@ -1,0 +1,434 @@
+# ============================================================
+# Dog Blog - Matery 主题配置
+# 所有者：黄太极
+# 说明：所有第三方服务（评论、统计、社交账号）默认关闭，
+#       待提供对应账号后再在相应节点开启。
+# ============================================================
+
+# ---------- 导航菜单 ----------
+menu:
+  首页:
+    url: /
+    icon: fas fa-home
+  科研项目:
+    url: /research
+    icon: fas fa-flask
+  工程项目:
+    url: /projects
+    icon: fas fa-microchip
+  技术博客:
+    url: /#articles
+    icon: fas fa-book-open
+  个人简历:
+    url: /resume
+    icon: fas fa-id-card
+  关于我:
+    url: /about
+    icon: fas fa-user-circle
+
+# 站点起始时间
+time:
+  enable: true
+  year: 2026
+  month: 01
+  date: 01
+  hour: 00
+  minute: 00
+  second: 00
+
+# ---------- 首页封面轮播 ----------
+cover:
+  showPrevNext: false
+  showIndicators: false
+  autoLoop: false
+  duration: 120
+  intervalTime: 5000
+  useConfig: false
+  video:
+    enable: false
+
+# 梦想语句（关闭，保持专业）
+dream:
+  enable: false
+
+# 音乐（关闭）
+music:
+  enable: false
+
+# 视频（关闭）
+video:
+  enable: false
+
+# 推荐文章
+recommend:
+  enable: true
+  showTitle: true
+  useConfig: false
+
+# ---------- 站点标识 ----------
+favicon: /favicon.png
+logo: /medias/logo.png
+
+# 首页 Banner 第二个按钮（暂未提供 GitHub，关闭）
+indexbtn:
+  enable: false
+  name: GitHub
+  icon: fab fa-github-alt
+  url:
+
+# 社交链接（未提供账号，留空不显示）
+socialLink:
+  github:
+  email:
+  facebook:
+  twitter:
+  qq:
+  weibo:
+  zhihu:
+  rss: false
+
+# ---------- 文章目录 ----------
+toc:
+  enable: true
+  heading: h2, h3, h4
+  collapseDepth: 0
+  showToggleBtn: true
+
+# 代码块
+code:
+  lang: true
+  copy: true
+  shrink: true
+  break: false
+
+# 打赏（关闭）
+reward:
+  enable: false
+
+# 复制版权
+copyright:
+  enable: false
+  minCharNumber: 120
+  description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
+
+# 数学公式
+mathjax:
+  enable: false
+
+# 文章信息
+postInfo:
+  date: true
+  update: false
+  wordCount: false
+  totalCount: false
+  min2read: false
+  readCount: false
+
+# 点击爱心 / 樱花 / 星星 / 飘雪（全部关闭，保持科研风格）
+clicklove:
+  enable: false
+sakura:
+  enable: false
+mouseStar:
+  enable: false
+snowdown:
+  enable: false
+
+# ---------- 关于页个人信息 ----------
+profile:
+  avatar: /medias/dog/avatar.svg
+  career: 电气工程 / 控制科学与工程
+  introduction: 聚焦构网型储能并网稳定性、柔性直流宽频振荡抑制与永磁电机设计，致力于电力电子与新能源并网领域的科研探索与工程实践。
+
+# ---------- 关于页：我的项目（严格依据简历） ----------
+myProjects:
+  enable: true
+  data:
+    构网型储能海上风电柔直系统宽频振荡抑制:
+      featured: true
+      icon: fas fa-battery-full
+      iconBackground: 'linear-gradient(135deg, #1565c0 0%, #0d47a1 100%)'
+      url: /research/gfm-storage
+      demoUrl:
+      githubUrl:
+      desc: 国家自然科学基金项目（2026.01—至今）。建立风电及构网型储能变流器并网系统阻抗模型，设计基于并网电流反馈的虚拟阻抗控制，实现强电网下振荡抑制（振荡抑制效果良好（具体指标待授权））。
+      shortDesc: 构网型储能变流器阻抗建模与虚拟阻抗振荡抑制。
+      label: '国家自然科学基金项目'
+      highlight: '阻抗建模 · 虚拟阻抗控制'
+      tech:
+        - 构网型储能
+        - 阻抗建模
+        - 虚拟阻抗
+        - MATLAB
+    多端特高压柔直源网交互宽频振荡抑制:
+      featured: true
+      icon: fas fa-broadcast-tower
+      iconBackground: 'linear-gradient(135deg, #00838f 0%, #006064 100%)'
+      url: /research/uhvdc-oscillation
+      demoUrl:
+      githubUrl:
+      desc: 国家电网总部科技项目（2024.09—2025.12）。参与 VMD-MSST-HHT 振荡辨识与振源分析设计、CCF+改进 C 型滤波器方案的硬件实验验证，改进型阻尼方案损耗有所改善（具体数值待授权）。
+      shortDesc: 宽频振荡辨识与改进 C 型滤波器阻尼方案验证。
+      label: '国家电网总部科技项目'
+      highlight: '振荡辨识 · 阻尼优化'
+      tech:
+        - VMD-MSST-HHT
+        - CCF
+        - C 型滤波器
+        - 硬件实验
+    纯电动汽车用轮毂电机研究:
+      featured: true
+      icon: fas fa-cog
+      iconBackground: 'linear-gradient(135deg, #6a1b9a 0%, #4527a0 100%)'
+      url: /projects/hub-motor
+      demoUrl:
+      githubUrl:
+      desc: 个人项目（2023.09—2024.06）。完成 40 kW、24 极 27 槽外转子永磁同步电机电磁设计，基于 ANSYS Maxwell 有限元分析与磁热耦合仿真，输出转矩 208 N·m、转矩脉动 < 5%。
+      shortDesc: 40 kW 轮毂永磁同步电机电磁设计与磁热耦合分析。
+      label: '个人项目'
+      highlight: '电磁设计 · 磁热耦合'
+      tech:
+        - ANSYS Maxwell
+        - Workbench
+        - MTPA/MTPV
+        - 效率 Map
+
+# ---------- 关于页：我的技能（依据简历） ----------
+mySkills:
+  enable: true
+  data:
+    MATLAB/Simulink 建模仿真:
+      background: 'linear-gradient(to right, #1565c0 0%, #42a5f5 100%)'
+      percent: 85%
+    ANSYS Maxwell / Workbench:
+      background: 'linear-gradient(to right, #00838f 0%, #26c6da 100%)'
+      percent: 80%
+    Altium Designer 电路设计:
+      background: 'linear-gradient(to right, #6a1b9a 0%, #ab47bc 100%)'
+      percent: 75%
+    AutoCAD / Visio 电气制图:
+      background: 'linear-gradient(to right, #ef6c00 0%, #ffb74d 100%)'
+      percent: 80%
+    英语（CET-6 技术文献阅读）:
+      background: 'linear-gradient(to right, #2e7d32 0%, #66bb6a 100%)'
+      percent: 75%
+
+# 个人相册（关闭，无个人照片）
+myGallery:
+  enable: false
+
+# 归档页日历
+postCalendar: true
+
+# ---------- 评论系统（全部关闭） ----------
+gitalk:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    clientId:
+    clientSecret:
+  admin:
+gitment:
+  enable: false
+disqus:
+  enable: false
+livere:
+  enable: false
+  uid:
+tcaptcha:
+  enable: false
+  appid:
+valine:
+  enable: false
+minivaline:
+  enable: false
+waline:
+  enable: false
+changyan:
+  enable: false
+twikoo:
+  enable: false
+
+# Fork me on Github（未提供仓库，关闭）
+githubLink:
+  enable: false
+  url:
+  title: Fork Me
+
+# 文章密码
+verifyPassword:
+  enable: false
+
+# 不蒜子统计（默认关闭：第三方统计接口在部分网络不可达，开启会产生控制台报错）
+busuanziStatistics:
+  enable: false
+  totalTraffic: false
+  totalNumberOfvisitors: false
+
+# Google / 百度统计（关闭）
+googleAnalytics:
+  enable: false
+  id:
+baiduAnalytics:
+  enable: false
+  id:
+
+# 百度推送
+baiduPush: false
+
+# ---------- 前端库路径（保持主题本地资源） ----------
+libs:
+  css:
+    matery: /css/matery.css
+    mycss: /css/my.css
+    dogcss: /css/dog.css
+    gallery: /css/gallery.css
+    fontAwesome: /libs/awesome/css/all.min.css
+    materialize: /libs/materialize/materialize.min.css
+    aos: /libs/aos/aos.css
+    animate: /libs/animate/animate.min.css
+    lightgallery: /libs/lightGallery/css/lightgallery.min.css
+    aplayer: /libs/aplayer/APlayer.min.css
+    dplayer: /libs/dplayer/DPlayer.min.css
+    gitalk: /libs/gitalk/gitalk.css
+    jqcloud: /libs/jqcloud/jqcloud.css
+    tocbot: /libs/tocbot/tocbot.css
+    prism: /libs/prism/prism.css
+    mermaid: /libs/mermaid/mermaid.min.css
+    fancybox: /libs/fancybox/jquery.fancybox.css
+    justifiedGallery: /libs/justifiedGallery/justifiedGallery.min.css
+  js:
+    matery: /js/matery.js
+    jquery: /libs/jquery/jquery-3.6.0.min.js
+    materialize: /libs/materialize/materialize.min.js
+    masonry: /libs/masonry/masonry.pkgd.min.js
+    aos: /libs/aos/aos.js
+    scrollProgress: /libs/scrollprogress/scrollProgress.min.js
+    lightgallery: /libs/lightGallery/js/lightgallery-all.min.js
+    clicklove: /libs/others/clicklove.js
+    sakura: /libs/others/sakura-small.js
+    star: /libs/others/star.js
+    snow: /libs/others/snow.js
+    tcaptcha: /libs/others/TencentCaptcha.js
+    busuanzi: /libs/others/busuanzi.pure.mini.js
+    aplayer: /libs/aplayer/APlayer.min.js
+    meting: /libs/aplayer/Meting.min.js
+    dplayer: /libs/dplayer/DPlayer.min.js
+    crypto: /libs/cryptojs/crypto-js.min.js
+    echarts: /libs/echarts/echarts.min.js
+    gitalk: /libs/gitalk/gitalk.min.js
+    valine: /libs/valine/Valine.min.js
+    minivaline: /libs/minivaline/MiniValine.js
+    waline: /libs/waline/Waline.min.js
+    twikoo: /libs/twikoo/twikoo.all.min.js
+    jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
+    tocbot: /libs/tocbot/tocbot.min.js
+    canvas_nest: /libs/background/canvas-nest.js
+    ribbon: /libs/background/ribbon.min.js
+    ribbonRefresh: /libs/background/ribbon-refresh.min.js
+    ribbon_dynamic: /libs/background/ribbon-dynamic.js
+    instantpage: /libs/instantpage/instantpage.js
+    typed: /libs/typed/typed.js
+    mermaid: /libs/mermaid/mermaid.min.js
+    fancybox: /libs/fancybox/fancybox.js
+    justifiedGallery: /libs/justifiedGallery/justifiedGallery.min.js
+    codeblock: /libs/codeBlock/codeBlockFuction.js
+    codelang: /libs/codeBlock/codeLang.js
+    codecopy: /libs/codeBlock/codeCopy.js
+    codeshrink: /libs/codeBlock/codeShrink.js
+
+# 默认特色图（复用主题自带抽象图片，非个人素材）
+featureImages:
+- /medias/featureimages/0.jpg
+- /medias/featureimages/1.jpg
+- /medias/featureimages/2.jpg
+- /medias/featureimages/3.jpg
+- /medias/featureimages/4.jpg
+- /medias/featureimages/5.jpg
+- /medias/featureimages/6.jpg
+
+# 转载规则
+reprint:
+  enable: true
+  default: cc_by
+
+# 在线联系（关闭）
+daovoice:
+  enable: false
+  app_id:
+tidio:
+  enable: false
+  public_key:
+tuxiaochao:
+  enable: false
+  productId:
+
+# 背景特效（关闭）
+canvas_nest:
+  enable: false
+ribbon:
+  enable: false
+ribbon_dynamic:
+  enable: false
+
+# 分享
+sharejs:
+  enable: true
+  sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
+addthis:
+  enable: false
+  pubid:
+
+# 首页打字副标题
+subtitle:
+  enable: true
+  loop: true
+  showCursor: true
+  startDelay: 300
+  typeSpeed: 80
+  backSpeed: 40
+  sub:
+    - 构网型储能 · 宽频振荡抑制
+    - 柔性直流输电 · 永磁电机设计
+    - 电力电子与新能源并网技术实践
+
+# 手机二级菜单
+navMenu:
+  mleft: false
+  bgColor: " "
+
+# 网页预加载
+instantpage:
+  enable: true
+
+# Banner 每日切换
+banner:
+  enable: false
+
+# ICP 备案（关闭）
+icp:
+  enable: false
+  url:
+  text:
+
+# CDN（关闭，本地资源）
+jsDelivr:
+  url:
+
+# 网站背景图
+background:
+  enable: true
+  url: /medias/dog/bg.svg
+
+# 说说（关闭）
+artitalk:
+  enable: false
+# 哔哔（关闭）
+bbtime:
+  enable: false
+
+# Mermaid
+mermaid:
+  enable: false
+  version: "latest"

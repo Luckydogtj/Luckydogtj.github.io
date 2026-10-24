@@ -1,0 +1,149 @@
+# Hexo Configuration
+# Dog Blog - 黄太极个人技术博客
+## Docs: https://hexo.io/docs/configuration.html
+
+# Site
+title: Dog Blog
+subtitle: 电气工程科研与技术实践
+description: 黄太极的个人技术博客，展示构网型储能宽频振荡抑制、柔性直流输电、轮毂电机电磁设计等科研与工程项目。
+keywords: "构网型储能,宽频振荡,GFM-VSC,柔性直流输电,MMC,轮毂电机,永磁同步电机,MATLAB,Simulink,ANSYS Maxwell"
+author: 黄太极
+language: zh-CN
+timezone: ''
+email:
+
+# URL
+# 部署到 GitHub Pages 时请改成你的站点地址，例如 https://<username>.github.io
+url: https://luckydogtj.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# Archives
+archive: 1
+category: 1
+tag: 1
+
+# Server
+port: 4000
+server_ip: localhost
+logger: false
+logger_format: dev
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+include:
+exclude:
+ignore:
+
+# Extensions
+## Themes: https://hexo.io/themes/
+theme: matery
+
+# Deployment
+# 尚未配置远程仓库，部署前请填写 repo 地址；本地开发请保持注释。
+# deploy:
+#   type: git
+#   repo: https://github.com/<your-name>/<repo>.git
+#   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+
+permalink_pinyin:
+  enable: true
+  separator: '-'
+
+marked:
+  sanitize: false
+  breaks: true
+  gfm: true
+  prependRoot: false
+  postAsset: false
+
+markdown:
+  render:
+    html: true
+
+postInfo:
+  date: true
+  update: false
+  wordCount: false
+  totalCount: false
+  min2read: false
+  readCount: false
+
+# 看板娘（默认关闭，保持科研博客专业风格；需要时可开启）
+live2d:
+  enable: false
+  scriptFrom: local
+  model:
+    use: live2d-widget-model-koharu
+  display:
+    position: left
+    width: 150
+    height: 300
+  mobile:
+    show: false
