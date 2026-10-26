@@ -29,34 +29,51 @@ comments: false
 
 ## 专业技能
 
-- **MATLAB/Simulink**：并网逆变器、MMC、储能变流器和电机驱动系统建模与电磁暂态仿真
-- **Altium Designer**：电路原理图与 PCB 绘制、硬件电路调试及实验验证
-- **AutoCAD / Visio**：电气原理图、二次接线图、系统图和端子排图识读、绘制与校核
-- **ANSYS Maxwell / Workbench**：永磁同步电机电磁设计、有限元分析与磁热耦合仿真
-- **英语能力**：CET-6，能够阅读英文技术文献和设备说明书
-
+<div class="dog-skill-group">
+  <h5>AI 工具与语言</h5>
+  <div class="dog-skill-chips">
+    <span class="dog-skill-chip">ChatGPT</span>
+    <span class="dog-skill-chip">Codex</span>
+    <span class="dog-skill-chip">CET-6</span>
+    <span class="dog-skill-chip">AI 辅助编程</span>
+    <span class="dog-skill-chip">技术报告撰写</span>
+  </div>
 </div>
 
-<div class="dog-resume-section">
-
-## 科研与项目经历
-
-<div class="dog-timeline-item">
-  <h4>基于构网型储能的海上风电柔直系统宽频振荡抑制技术研究</h4>
-  <div class="dog-date">2026.01—至今 · 国家自然科学基金项目</div>
-  <p>建立风电及构网型储能变流器并网系统阻抗模型；设计基于并网电流反馈的虚拟阻抗控制；初步分析显示储能接入后阻抗交点发生变化、稳定性有所改善，具体指标数值待核实并获准公开后补充。</p>
+<div class="dog-skill-group">
+  <h5>电力系统仿真</h5>
+  <div class="dog-skill-chips">
+    <span class="dog-skill-chip">MATLAB / Simulink</span>
+    <span class="dog-skill-chip">PSCAD</span>
+    <span class="dog-skill-chip">并网逆变器建模</span>
+    <span class="dog-skill-chip">MMC 建模</span>
+    <span class="dog-skill-chip">PCS 建模</span>
+    <span class="dog-skill-chip">电磁暂态仿真</span>
+  </div>
 </div>
 
-<div class="dog-timeline-item">
-  <h4>多端特高压柔性直流源网交互宽频振荡抑制研究</h4>
-  <div class="dog-date">2024.09—2025.12 · 国家电网总部科技项目</div>
-  <p>参与 VMD-MSST-HHT 振荡辨识及振源分析设计；参与 CCF 与改进 C 型滤波器协同阻尼方案的分析与仿真验证；改进型阻尼方案的阻尼器功率损耗比有所降低（具体数值待公开授权后补充）。</p>
+<div class="dog-skill-group">
+  <h5>硬件设计</h5>
+  <div class="dog-skill-chips">
+    <span class="dog-skill-chip">Altium Designer</span>
+    <span class="dog-skill-chip">EPLAN</span>
+    <span class="dog-skill-chip">原理图绘制</span>
+    <span class="dog-skill-chip">PCB 设计</span>
+    <span class="dog-skill-chip">硬件调试</span>
+    <span class="dog-skill-chip">实验验证</span>
+  </div>
 </div>
 
-<div class="dog-timeline-item">
-  <h4>纯电动汽车用轮毂电机研究</h4>
-  <div class="dog-date">2023.09—2024.06 · 个人项目</div>
-  <p>完成 40 kW、24 极 27 槽外转子永磁同步电机电磁设计；Maxwell 有限元分析输出转矩 208 N·m、转矩脉动小于 5%；磁热耦合仿真下永磁体最高温度由 232 ℃ 降至 167 ℃；基于 MTPA/MTPV 完成效率 Map 分析。</p>
+<div class="dog-skill-group">
+  <h5>工程制图</h5>
+  <div class="dog-skill-chips">
+    <span class="dog-skill-chip">SolidWorks</span>
+    <span class="dog-skill-chip">AutoCAD</span>
+    <span class="dog-skill-chip">Visio</span>
+    <span class="dog-skill-chip">电气原理图</span>
+    <span class="dog-skill-chip">二次接线图</span>
+    <span class="dog-skill-chip">系统图</span>
+  </div>
 </div>
 
 </div>
@@ -68,7 +85,48 @@ comments: false
 <div class="dog-timeline-item">
   <h4>泰开集团（泰安）· 电气设计员实习</h4>
   <div class="dog-date">2023.06—2023.08</div>
-  <p>参与高低压开关设备电气原理图、接线图及端子排图的识读与修订，使用 AutoCAD 完成图纸整理与归档；参与设备参数与图纸信息核对，了解断路器、互感器、继电器等电气设备的选型原则；跟进生产与调试环节，协助排查设备装配、接线及测试过程中的电气问题；整理项目图纸和技术文档，参与设计资料校核。</p>
+  <ul class="dog-bullet">
+    <li>使用 AutoCAD 修改、校核高低压开关柜电气原理图、二次接线图及端子排图，累计约 50 张。</li>
+    <li>使用 SolidWorks 完成 4 套开关柜三维建模与空间布局优化。</li>
+    <li>参与车间装配、二次接线和现场调试，协助排查接线及装配问题。</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="dog-resume-section">
+
+## 项目经历
+
+<div class="dog-timeline-item">
+  <h4>国家自然科学基金项目 — 基于构网型储能的海上风电柔直系统宽频振荡抑制技术研究</h4>
+  <div class="dog-date">2026.01—至今</div>
+  <ul class="dog-bullet">
+    <li>使用 MATLAB/Simulink，结合储能侧 Buck-Boost DC/DC 与 DC/AC 变换环节建立并网系统阻抗模型。</li>
+    <li>利用 Bode 图和 Nyquist 判据分析控制参数、电网强度对宽频稳定性的影响。</li>
+    <li>研究基于并网电流反馈的虚拟阻抗控制方法，实现强电网下储能变流器振荡抑制。</li>
+    <li>参与仿真及实验数据整理、技术报告撰写和项目汇报 PPT 制作。</li>
+  </ul>
+</div>
+
+<div class="dog-timeline-item">
+  <h4>国家电网总部科技项目 — 多端特高压柔性直流源网交互宽频振荡抑制研究</h4>
+  <div class="dog-date">2024.09—2025.12</div>
+  <ul class="dog-bullet">
+    <li>参与 VMD-MSST-HHT 宽频振荡辨识方法研究。</li>
+    <li>基于 Altium Designer 与 EPLAN 搭建并调试 CCF + 改进 C 型滤波器硬件实验平台，验证高频振荡抑制效果。</li>
+    <li>参与仿真及实验数据整理、项目结项报告撰写和汇报 PPT 制作。</li>
+  </ul>
+</div>
+
+<div class="dog-timeline-item">
+  <h4>个人项目 — 纯电动汽车表贴式永磁体轮毂电机设计</h4>
+  <div class="dog-date">2023.09—2024.06</div>
+  <ul class="dog-bullet">
+    <li>基于 Ansys Maxwell 完成 40 kW、24 极 27 槽永磁电机建模及空载、负载仿真。</li>
+    <li>使用 Maxwell 与 Mechanical 开展磁热耦合分析，结合等效水冷仿真研究永磁体温升。</li>
+    <li>基于 Ansys ACT 分析电机运行特性并生成效率 Map，评估高速工况效率分布及弱磁扩速能力。</li>
+  </ul>
 </div>
 
 </div>
@@ -77,8 +135,8 @@ comments: false
 
 ## 论文与专利
 
-- 《一种构网型变流器并网系统振荡抑制方法》——发明专利，已受理
-- 《强电网下构网型变流器并网系统次/超同步振荡抑制方法》——中文核心（国网经研院）
+- 《一种构网型变流器并网系统振荡抑制方法》——发明专利，已获国家知识产权局受理。
+- 《强电网下构网型变流器并网系统次/超同步振荡抑制方法》——中文核心（国网经研院），按原文保留成果描述，不擅自补充发表状态。
 
 </div>
 
@@ -86,10 +144,9 @@ comments: false
 
 ## 个人评价
 
-- 校级 800 米第 1 名
-- 校级七项全能第 1 名，并打破该项目纪录
-- 曾组织有不同国家选手参与的篮球比赛，并担任裁判
-- 具备使用英语进行交流与组织协调的经历
+- 运动与集体活动：曾获七项全能第一并打破纪录；校田径队、篮球队队员，院篮球队队长；具备组织协调与执行力。
+- 学业与荣誉：多次获得东北林业大学奖学金，获优秀个人、优秀干部等荣誉，具备较强的自律性、学习能力与团队协作精神。
+- 语言与工具：CET-6，英文技术文献阅读、AI 辅助编程与技术报告撰写。
 
 </div>
 
@@ -97,6 +154,6 @@ comments: false
 
 ## 联系方式
 
-- 电话、私人邮箱等个人信息按本人要求不公开展示
+- 电话、私人邮箱等个人信息按本人要求不公开展示。
 
 </div>
