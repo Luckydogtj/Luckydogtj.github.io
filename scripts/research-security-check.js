@@ -58,7 +58,13 @@ hexo.extend.filter.register('before_generate', function () {
   if (!patterns) {
     return;
   }
-  walk(path.join(hexo.source_dir), /\.(md|html|ejs|js|css)$/, []).forEach(function (file) {
+  var files = walk(path.join(hexo.source_dir), /\.(md|html|ejs|js|css)$/, []);
+  files.push(path.join(hexo.base_dir, 'themes', 'matery', '_config.yml'));
+  files = files.concat(walk(path.join(hexo.base_dir, 'themes', 'matery', 'layout'), /\.(ejs|yml|json)$/, []));
+  files.forEach(function (file) {
+    if (!fs.existsSync(file)) {
+      return;
+    }
     var text = fs.readFileSync(file, 'utf8');
     patterns.forEach(function (re) {
       if (re.test(text)) {

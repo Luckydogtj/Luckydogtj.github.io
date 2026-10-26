@@ -49,6 +49,8 @@ function walk(dir, ext, out) {
 
 /* ---------- 1. 构建产物：标记残留 + 受限结构 ---------- */
 var outputFiles = walk(path.join(publicDir, 'research'), /\.html$/, []);
+var homeFile = path.join(publicDir, 'index.html');
+if (fs.existsSync(homeFile)) outputFiles.push(homeFile);
 ['search.xml', 'atom.xml', 'rss.xml', 'feed.xml'].forEach(function (name) {
   var file = path.join(publicDir, name);
   if (fs.existsSync(file)) outputFiles.push(file);
@@ -86,12 +88,17 @@ if (fs.existsSync(watchFile)) {
     .map(function (line) { return { raw: line.trim(), re: new RegExp(line.trim()) }; });
 
   var sourceFiles = walk(sourceDir, /\.(md|html|ejs|js|css)$/, []);
+  sourceFiles.push(path.join(root, 'themes', 'matery', '_config.yml'));
+  sourceFiles = sourceFiles.concat(walk(path.join(root, 'themes', 'matery', 'layout'), /\.(ejs|yml|json)$/, []));
   ['DOG_BLOG_AUDIT.md', 'DOG_RESEARCH_IMPLEMENTATION_REPORT.md', 'RESEARCH_ASSET_REVIEW.md', 'DOG_SECURITY_CHECK.md'].forEach(function (name) {
     var file = path.join(root, name);
     if (fs.existsSync(file)) sourceFiles.push(file);
   });
 
   sourceFiles.forEach(function (file) {
+    if (!fs.existsSync(file)) {
+      return;
+    }
     var text = fs.readFileSync(file, 'utf8');
     checked.push(rel(file));
     patterns.forEach(function (p) {
