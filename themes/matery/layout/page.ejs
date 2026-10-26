@@ -1,6 +1,8 @@
+<% if (!page.hideBanner) { %>
 <%- partial('_partial/bg-cover') %>
+<% } %>
 
-<main class="content">
+<main class="content<% if (page.hideBanner) { %> content--no-banner<% } %>">
 
     <div class="container">
         <div class="card">

@@ -31,10 +31,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Clean and Generate Static Files
-        run: |
-          npx hexo clean
-          npx hexo generate
+      - name: Clean, Generate and Security Check
+        run: npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

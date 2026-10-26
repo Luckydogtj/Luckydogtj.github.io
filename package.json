@@ -4,7 +4,8 @@
   "private": true,
   "description": "Dog Blog - 黄太极的个人技术博客（电气工程 / 构网型储能 / 新能源并网）",
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo clean && hexo generate && node tools/research-security-scan.js",
+    "check:security": "node tools/research-security-scan.js",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"

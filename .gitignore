@@ -15,6 +15,12 @@ node_modules/
 .env.*
 *.local
 
+# Private research data (must stay outside this repo)
+/Dog_blog_private/
+**/research-restricted/
+*.blocks.json
+watchlist.txt
+
 # OS / Editor
 .DS_Store
 Thumbs.db

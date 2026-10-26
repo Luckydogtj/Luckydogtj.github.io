@@ -437,3 +437,903 @@ footer.bg-color,
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   科研项目页面组件（仅用于 /research/ 及两个项目详情页）
+   命名空间：dog-research-* / dog-work-* / dog-roadmap / dog-figure
+   颜色复用 :root 调色板，不修改站点其他区域
+   ============================================================ */
+
+/* ---- 科研项目总览 ---- */
+.dog-research-list-head {
+  margin-bottom: 24px;
+}
+.dog-research-list-head h1 {
+  color: var(--dog-primary-dark);
+  font-size: 1.7rem;
+  margin: 0 0 6px;
+}
+.dog-research-list-head h1 span {
+  color: var(--dog-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-left: 6px;
+}
+.dog-research-list-sub {
+  color: var(--dog-primary);
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+}
+.dog-research-list-note {
+  color: #64748b;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.dog-research-card {
+  display: block;
+  position: relative;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  border: 1px solid var(--dog-nav-border);
+  border-radius: 12px;
+  background-color: var(--dog-card);
+  color: var(--dog-text);
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.dog-research-card:hover,
+.dog-research-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 10px 26px rgba(30, 58, 95, 0.14);
+  color: var(--dog-text);
+}
+.dog-research-card:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 3px;
+}
+.dog-research-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.dog-research-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background-color: var(--dog-tint);
+  color: var(--dog-primary);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.dog-research-badge--dark {
+  background-color: rgba(30, 58, 95, 0.1);
+  color: var(--dog-primary-dark);
+}
+.dog-research-period {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+.dog-research-card-title {
+  display: block;
+  color: var(--dog-primary-dark);
+  font-size: 1.16rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.dog-research-card-desc {
+  display: block;
+  color: var(--dog-text);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.dog-research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dog-research-card-more {
+  display: inline-block;
+  color: var(--dog-primary);
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-top: 14px;
+}
+.dog-research-card-more i {
+  font-size: 0.75rem;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+.dog-research-card:hover .dog-research-card-more i {
+  transform: translateX(3px);
+}
+.dog-research-list-foot {
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+/* ---- 详情页整体与 Hero ---- */
+/* 详情页隐藏站点大 Banner 后，导航在文档流内占 64px，仅需保留少量间距 */
+main.content.content--no-banner {
+  padding-top: 24px;
+}
+.dog-research-page {
+  color: var(--dog-text);
+}
+.dog-research-back {
+  margin: 0 0 14px;
+}
+.dog-research-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: var(--dog-primary);
+  text-decoration: none;
+}
+.dog-research-back a:hover {
+  color: var(--dog-hover);
+}
+.dog-research-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 32px 30px;
+  border-radius: 14px;
+  background-image: linear-gradient(135deg, #1556aa 0%, #1267b0 55%, #006276 100%);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(21, 86, 170, 0.2);
+}
+.dog-research-hero::after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+.dog-research-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.dog-research-hero .dog-research-badge {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.dog-research-hero .dog-research-period {
+  color: rgba(226, 242, 252, 0.9);
+}
+.dog-research-focus {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #dbeafe;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+}
+.dog-research-hero h1 {
+  color: #fff;
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+.dog-research-hero-desc {
+  color: rgba(235, 245, 252, 0.95);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin: 0 0 16px;
+  max-width: 760px;
+}
+.dog-research-hero .dog-research-tags {
+  gap: 8px;
+}
+.dog-tag--on-dark {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #eaf4ff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ---- 双栏布局与章节导航 ---- */
+.dog-research-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 36px;
+  align-items: start;
+  margin-top: 30px;
+}
+.dog-research-main {
+  min-width: 0;
+}
+.dog-research-section {
+  margin-bottom: 40px;
+  scroll-margin-top: 88px;
+}
+.dog-research-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dog-primary-dark);
+  font-size: 1.34rem;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--dog-nav-border);
+}
+.dog-research-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, var(--dog-primary) 0%, var(--dog-primary-light) 100%);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.dog-research-section h3 {
+  color: var(--dog-primary-dark);
+  font-size: 1.06rem;
+  margin: 24px 0 10px;
+}
+.dog-research-section > h3 {
+  padding-left: 11px;
+  border-left: 3px solid var(--dog-primary-light);
+  line-height: 1.5;
+}
+.dog-research-section p {
+  line-height: 1.9;
+  font-size: 0.94rem;
+  color: var(--dog-text);
+  margin: 10px 0 12px;
+}
+.dog-research-lead {
+  background-color: var(--dog-tint);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #475569 !important;
+  font-size: 0.86rem !important;
+}
+.dog-research-note {
+  background-color: var(--dog-tint);
+  border-left: 3px solid var(--dog-primary);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #475569 !important;
+  font-size: 0.84rem !important;
+  line-height: 1.7 !important;
+}
+/* CI 构建时由 scripts/research-publication-guard.js 插入的发布限制提示 */
+.dog-research-restricted {
+  margin: 16px 0;
+  padding: 16px 18px;
+  border: 1px dashed rgba(217, 119, 6, 0.45);
+  border-left: 4px solid #d97706;
+  border-radius: 8px;
+  background-color: #fffbeb;
+  color: #92400e;
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+.dog-research-restricted strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #b45309;
+  font-size: 0.9rem;
+}
+.dog-research-toc {
+  position: sticky;
+  top: 84px;
+  padding: 14px 6px 14px 0;
+  border-left: 1px solid var(--dog-nav-border);
+}
+.dog-research-toc-title {
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px 12px;
+}
+.dog-research-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dog-research-toc a {
+  display: block;
+  padding: 7px 10px;
+  border-left: 2px solid transparent;
+  color: #475569;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.dog-research-toc a:hover {
+  color: var(--dog-primary);
+  background-color: var(--dog-tint);
+}
+.dog-research-toc a.is-active {
+  color: var(--dog-primary);
+  border-left-color: var(--dog-primary);
+  background-color: var(--dog-tint);
+  font-weight: 600;
+}
+
+/* ---- 本人参与工作三卡片 ---- */
+.dog-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.dog-work-card {
+  padding: 20px 20px 16px;
+  border: 1px solid var(--dog-nav-border);
+  border-top: 3px solid var(--dog-primary);
+  border-radius: 10px;
+  background-color: var(--dog-card);
+  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.05);
+}
+.dog-work-card h3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--dog-primary-dark);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+.dog-work-card h3 i {
+  color: var(--dog-primary);
+  margin-top: 3px;
+  font-size: 0.9rem;
+}
+.dog-work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dog-work-list li {
+  margin-bottom: 11px;
+}
+.dog-work-label {
+  display: inline-block;
+  background-color: var(--dog-tint);
+  color: var(--dog-primary);
+  border-radius: 4px;
+  padding: 0 6px;
+  margin-bottom: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.dog-work-list p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+/* ---- 技术路线 ---- */
+.dog-roadmap {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  counter-reset: dog-step;
+  margin: 20px 0 4px;
+  padding: 0;
+}
+.dog-roadmap li {
+  position: relative;
+  counter-increment: dog-step;
+  padding: 16px 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background-color: var(--dog-tint);
+  color: var(--dog-primary-dark);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.dog-roadmap li::before {
+  content: counter(dog-step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background-color: var(--dog-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.dog-roadmap li::after {
+  content: "\2192";
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #93c5fd;
+  font-weight: 700;
+  line-height: 1;
+}
+.dog-roadmap li:last-child::after {
+  content: none;
+}
+
+/* ---- 流程链 ---- */
+.dog-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 6px;
+}
+.dog-chain span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background-color: var(--dog-tint);
+  color: var(--dog-primary-dark);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.dog-chain i {
+  color: #93c5fd;
+  font-size: 0.68rem;
+}
+
+/* ---- 图表占位与图注 ---- */
+.dog-figure {
+  margin: 24px 0;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--dog-card);
+}
+.dog-figure-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  box-sizing: border-box;
+  aspect-ratio: 16 / 7;
+  min-height: 190px;
+  max-height: 300px;
+  padding: 24px;
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(160deg, rgba(239, 246, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  color: #94a3b8;
+  font-size: 0.84rem;
+  text-align: center;
+}
+.dog-figure-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed #cfe3fb;
+  border-radius: 8px;
+  pointer-events: none;
+}
+.dog-figure-placeholder::after {
+  content: attr(data-code);
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  color: var(--dog-primary);
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.dog-figure-placeholder i {
+  font-size: 1.45rem;
+  color: #bfdbfe;
+}
+.dog-figure figcaption {
+  padding: 12px 18px 14px;
+  border-top: 1px solid #eef2f7;
+  color: #475569;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+.dog-figure figcaption strong {
+  color: var(--dog-primary-dark);
+}
+.dog-figure-source {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 0.76rem;
+}
+.dog-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+/* ---- 验证指标与工况 ---- */
+.dog-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin: 14px 0 18px;
+}
+.dog-kpi-card {
+  padding: 18px 20px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background-color: var(--dog-tint);
+}
+.dog-kpi-value {
+  display: block;
+  color: var(--dog-primary);
+  font-size: 1.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.dog-kpi-value em {
+  font-size: 0.86rem;
+  font-style: normal;
+  font-weight: 500;
+}
+.dog-kpi-label {
+  display: block;
+  margin-top: 2px;
+  color: var(--dog-primary-dark);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.dog-kpi-meta {
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+.dog-loss-chart {
+  margin: 16px 0 10px;
+}
+.dog-loss-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 80px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dog-loss-label {
+  color: #475569;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.dog-loss-track {
+  display: block;
+  height: 14px;
+  border-radius: 999px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+.dog-loss-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+.dog-loss-fill--base {
+  background-color: #94a3b8;
+}
+.dog-loss-fill--improved {
+  background-image: linear-gradient(90deg, var(--dog-primary) 0%, var(--dog-primary-light) 100%);
+}
+.dog-loss-value {
+  color: var(--dog-primary-dark);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: right;
+}
+.dog-condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.dog-condition-card {
+  padding: 16px 18px;
+  border: 1px solid var(--dog-nav-border);
+  border-left: 3px solid var(--dog-primary);
+  border-radius: 8px;
+  background-color: var(--dog-card);
+}
+.dog-condition-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+}
+.dog-condition-card h3 i {
+  color: var(--dog-primary);
+  font-size: 0.86rem;
+}
+.dog-condition-card p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+.dog-condition-meta {
+  display: block;
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+/* ---- 个人贡献与成果 ---- */
+.dog-contrib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.dog-contrib-item {
+  padding: 16px;
+  border-radius: 10px;
+  background-color: var(--dog-tint);
+  border: 1px solid #dbeafe;
+}
+.dog-contrib-item i {
+  color: var(--dog-primary);
+  margin-right: 6px;
+}
+.dog-contrib-item strong {
+  color: var(--dog-primary-dark);
+  font-size: 0.9rem;
+}
+.dog-contrib-item p {
+  margin: 8px 0 0;
+  font-size: 0.83rem;
+  line-height: 1.7;
+}
+.dog-output-list {
+  list-style: none;
+  margin: 8px 0 12px;
+  padding: 0;
+}
+.dog-output-list li {
+  padding: 0 0 12px 14px;
+  margin-bottom: 12px;
+  border-left: 3px solid #bfdbfe;
+}
+.dog-output-list li strong {
+  color: var(--dog-primary-dark);
+  font-size: 0.9rem;
+}
+.dog-output-list li p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--dog-text);
+}
+
+/* ---- 上下篇项目导航 ---- */
+/* 注意：Matery/Materialize 对全局 nav 设置了粉色背景与 64px 高度，需在此重置 */
+.dog-research-nextprev {
+  display: flex;
+  gap: 14px;
+  height: auto;
+  line-height: normal;
+  margin-top: 36px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--dog-nav-border);
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+.dog-research-nextprev-link {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--dog-nav-border);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.dog-research-nextprev-link:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  background-color: var(--dog-tint);
+}
+.dog-research-nextprev-link span {
+  display: block;
+  color: #64748b;
+  font-size: 0.76rem;
+  margin-bottom: 4px;
+}
+.dog-research-nextprev-link strong {
+  display: block;
+  color: var(--dog-primary-dark);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.dog-research-nextprev-link--next {
+  text-align: right;
+}
+
+/* ---- 图表灯箱 ---- */
+.dog-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  padding: 40px 24px;
+  background-color: rgba(8, 25, 42, 0.86);
+  align-items: center;
+  justify-content: center;
+}
+.dog-lightbox.is-open {
+  display: flex;
+}
+.dog-lightbox img {
+  max-width: min(100%, 1100px);
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+.dog-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.dog-lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+/* ---- 平板与手机：单栏、目录置顶 ---- */
+@media (max-width: 991px) {
+  .dog-research-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .dog-research-layout > .dog-research-main {
+    width: 100%;
+  }
+  .dog-research-layout > .dog-research-toc {
+    order: -1;
+    position: static;
+    padding: 12px 0 0;
+    border-left: none;
+    border-bottom: 1px solid var(--dog-nav-border);
+  }
+  .dog-research-toc-title {
+    margin-left: 0;
+  }
+  .dog-research-toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+  .dog-research-toc a {
+    padding: 4px 10px;
+    border: 1px solid var(--dog-nav-border);
+    border-radius: 999px;
+    font-size: 0.78rem;
+  }
+  .dog-research-toc a.is-active {
+    border-color: var(--dog-primary);
+    border-left-color: var(--dog-primary);
+  }
+}
+
+@media (max-width: 767px) {
+  .dog-roadmap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .dog-roadmap li::after {
+    content: "\2193";
+    right: 50%;
+    top: auto;
+    bottom: -17px;
+    transform: translateX(50%);
+  }
+  .dog-loss-row {
+    grid-template-columns: 1fr auto;
+    gap: 6px 10px;
+  }
+  .dog-loss-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .dog-loss-value {
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  main.content.content--no-banner {
+    padding-top: 20px;
+  }
+  .dog-research-hero {
+    padding: 24px 20px 22px;
+  }
+  .dog-research-hero h1 {
+    font-size: 1.24rem;
+  }
+  .dog-research-section {
+    margin-bottom: 34px;
+  }
+  .dog-research-section h2 {
+    font-size: 1.18rem;
+  }
+  .dog-research-card {
+    padding: 18px 16px;
+  }
+  .dog-research-card-title {
+    font-size: 1.04rem;
+  }
+  .dog-figure-placeholder {
+    min-height: 160px;
+  }
+  .dog-research-nextprev {
+    flex-direction: column;
+  }
+  .dog-research-nextprev-link--next {
+    text-align: left;
+  }
+  .dog-kpi-value {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dog-research-card,
+  .dog-research-card-more i,
+  .dog-research-toc a,
+  .dog-research-nextprev-link {
+    transition: none;
+  }
+  .dog-research-card:hover {
+    transform: none;
+  }
+}
