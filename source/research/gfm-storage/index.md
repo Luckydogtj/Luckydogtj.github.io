@@ -27,6 +27,10 @@ hideBanner: true
   </div>
 </section>
 
+<section class="dog-research-section" id="report" style="margin-top:28px">
+  <div class="dog-ppt-slot"><h2>项目汇报 PPT</h2><p class="dog-research-restricted">汇报资料尚待公开审核。原始页面仅在本机预览中展示，公开版本暂不提供原图或下载。</p></div>
+</section>
+
 <div class="dog-research-layout">
 
 <article class="dog-research-main">
@@ -185,6 +189,36 @@ hideBanner: true
   <p class="dog-research-note">上述论文与专利属于本项目相关专题的研究内容，不代表基金项目整体成果；在取得可查凭证前，不使用“已发表”“已授权”等表述。</p>
 </section>
 
+<section class="dog-research-section dog-report" id="report-notes">
+  <h2><span class="dog-research-num">08</span>汇报专题导读</h2>
+  <div class="dog-report-intro"><div class="dog-report-meta"><span>关联专题汇报</span><span>原汇报 5 页</span><span>文字整理版 · 发布候选</span></div>
+  <h3>构网型变流器次 / 超同步振荡抑制</h3><p>这份汇报聚焦含 / 无电流环 GFM-VSC 的序阻抗、强电网稳定性和虚拟阻抗附加电压反馈，为构网型储能与海上风电项目提供相关专题分析。</p></div>
+  <p class="dog-report-scope">专题对象为构网型变流器并网系统，不能据此认定已完成海上风电—储能—柔直全系统验证。报告内容也不作为个人独立完成全部研究的证明。</p>
+  <div class="dog-report-topics"><details class="dog-report-topic" open>
+  <summary><span class="dog-report-index">01</span><span>序阻抗建模<small>原汇报第 2—3 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>比较含电流环与无电流环的 GFM-VSC 序阻抗，用扫频结果核对理论模型。序阻抗模型用于描述端口特性，扫频用于验证，二者作用不同。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>含 / 无电流环模型</li><li>序阻抗表达</li><li>扫频核对</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#tech">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details><details class="dog-report-topic">
+  <summary><span class="dog-report-index">02</span><span>强电网下的振荡机理<small>原汇报第 4 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>结合 Bode、Nyquist 与时域分析，考察电流环参数变化对次同步频段阻抗及源网交互的影响。结论限定在报告所考察的模型与参数范围内。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>控制环节变化</li><li>端口阻抗变化</li><li>源网稳定性评估</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#validation">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details><details class="dog-report-topic">
+  <summary><span class="dog-report-index">03</span><span>虚拟阻抗附加电压反馈<small>原汇报第 5 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>利用并网电流构造附加电压分量，重构控制侧等效电压反馈，改善源网阻抗匹配。示意仅表示控制思路，具体结构、参数与仿真曲线需另行审核。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>并网电流</li><li>虚拟阻抗环节</li><li>附加电压反馈</li><li>阻抗匹配评估</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#tech">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details></div>
+  <p class="dog-report-disclosure"><strong>资料说明</strong>此处展示经清理的专题摘要与方法示意。完整报告、原始页面、控制参数和仿真数值尚未经公开授权，暂不提供下载或原图。摘要亦需完成内容与归属审核后才能发布。</p>
+</section>
+
 <nav class="dog-research-nextprev" aria-label="项目导航">
   <a class="dog-research-nextprev-link dog-research-nextprev-link--prev" href="/research/">
     <span>返回</span>
@@ -201,6 +235,7 @@ hideBanner: true
 <aside class="dog-research-toc" aria-label="章节导航">
   <p class="dog-research-toc-title">章节导航</p>
   <ol>
+    <li><a href="#report">项目汇报 PPT</a></li>
     <li><a href="#background">01 背景与问题</a></li>
     <li><a href="#work">02 本人参与工作</a></li>
     <li><a href="#roadmap">03 技术路线</a></li>
@@ -208,6 +243,7 @@ hideBanner: true
     <li><a href="#validation">05 研究验证与结果</a></li>
     <li><a href="#contribution">06 个人贡献与能力沉淀</a></li>
     <li><a href="#outputs">07 相关成果与延伸阅读</a></li>
+    <li><a href="#report-notes">08 汇报专题导读</a></li>
   </ol>
 </aside>
 

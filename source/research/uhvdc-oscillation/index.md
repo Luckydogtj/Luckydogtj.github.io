@@ -27,6 +27,10 @@ hideBanner: true
   </div>
 </section>
 
+<section class="dog-research-section" id="report" style="margin-top:28px">
+  <div class="dog-ppt-slot"><h2>项目汇报 PPT</h2><p class="dog-research-restricted">汇报资料尚待公开审核。原始页面仅在本机预览中展示，公开版本暂不提供原图或下载。</p></div>
+</section>
+
 <div class="dog-research-layout">
 
 <article class="dog-research-main">
@@ -185,6 +189,36 @@ hideBanner: true
   </ul>
 </section>
 
+<section class="dog-research-section dog-report" id="report-notes">
+  <h2><span class="dog-research-num">08</span>汇报专题导读</h2>
+  <div class="dog-report-intro"><div class="dog-report-meta"><span>项目课题汇报</span><span>原汇报 11 页</span><span>文字整理版 · 发布候选</span></div>
+  <h3>藏东南课题 5：源网交互宽频振荡</h3><p>对应“高海拔地区大规模水电与新能源联合外送柔性直流系统成套关键技术研究”中的课题 5，汇报覆盖多形态电源与柔直阻抗建模、振荡辨识及协同阻尼。</p></div>
+  <p class="dog-report-scope">本模块介绍课题整体技术脉络。个人工作范围以本页“本人参与工作”为准，不将课题整体创新点或全部模型归为个人独立成果。</p>
+  <div class="dog-report-topics"><details class="dog-report-topic" open>
+  <summary><span class="dog-report-index">01</span><span>多形态电源与柔直阻抗<small>原汇报第 1—4 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>围绕源网端口阻抗建立分析框架，考察控制环节、控制延时与运行条件的影响。涉及水电机组及并网控制环节的具体模型归属仍需核实，本导读不转述其中的参数结论。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>多形态电源</li><li>源网阻抗交互</li><li>风险频段评估</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#tech">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details><details class="dog-report-topic">
+  <summary><span class="dog-report-index">02</span><span>VMD-MSST-HHT 振荡辨识<small>原汇报第 5—6 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>通过模态预分离、时频聚集与瞬时特征提取，分析多模态振荡信号。辨识结果可用于附加阻尼控制的输入研究；误差比较依赖具体信号、噪声和评价指标，不概括为所有指标均优于其他方法。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>VMD 模态分离</li><li>MSST 时频聚集</li><li>HHT 特征提取</li><li>附加阻尼研究</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#tech">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details><details class="dog-report-topic">
+  <summary><span class="dog-report-index">03</span><span>CCF 与改进 C 型协同阻尼<small>原汇报第 7—10 页</small></span><span class="dog-report-toggle" aria-hidden="true"></span></summary>
+  <div class="dog-report-body">
+    <p>CCF 作用于控制侧阻尼重塑，改进 C 型滤波器提供无源补偿；结合运行工况和控制延时评估方案。报告展示的是仿真研究，不作为工程投运或任意工况稳定的证明。</p>
+    <figure class="dog-report-figure"><ol class="dog-report-flow"><li>CCF 有源阻尼</li><li>改进 C 型无源补偿</li><li>协同方案</li><li>多工况仿真评估</li></ol><figcaption>方法关系示意 · 根据专题内容重新整理，不含报告原图或仿真数值</figcaption></figure>
+    <a class="dog-report-related" href="#validation">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
+  </div>
+</details></div>
+  <p class="dog-report-disclosure"><strong>资料说明</strong>此处展示经清理的专题摘要与方法示意。完整报告、原始页面、控制参数和仿真数值尚未经公开授权，暂不提供下载或原图。摘要亦需完成内容与归属审核后才能发布。</p>
+</section>
+
 <nav class="dog-research-nextprev" aria-label="项目导航">
   <a class="dog-research-nextprev-link dog-research-nextprev-link--prev" href="/research/gfm-storage/">
     <span>上一个项目</span>
@@ -201,6 +235,7 @@ hideBanner: true
 <aside class="dog-research-toc" aria-label="章节导航">
   <p class="dog-research-toc-title">章节导航</p>
   <ol>
+    <li><a href="#report">项目汇报 PPT</a></li>
     <li><a href="#background">01 背景与问题</a></li>
     <li><a href="#work">02 本人参与工作</a></li>
     <li><a href="#roadmap">03 技术路线</a></li>
@@ -208,6 +243,7 @@ hideBanner: true
     <li><a href="#validation">05 研究验证与结果</a></li>
     <li><a href="#contribution">06 个人贡献与能力沉淀</a></li>
     <li><a href="#outputs">07 相关成果与延伸阅读</a></li>
+    <li><a href="#report-notes">08 汇报专题导读</a></li>
   </ol>
 </aside>
 

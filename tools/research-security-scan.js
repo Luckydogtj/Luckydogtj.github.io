@@ -14,6 +14,12 @@
  */
 'use strict';
 
+// Report files and local-only review routes are never publication candidates.
+var reportPolicy = require('./research-report-policy');
+var reportRoot = require('path').resolve(__dirname, '..');
+var reportIssues = reportPolicy([require('path').join(reportRoot, 'source'), require('path').join(reportRoot, 'public')]);
+if (reportIssues.length) { console.error(reportIssues.join('\n')); process.exit(1); }
+
 var fs = require('fs');
 var path = require('path');
 
