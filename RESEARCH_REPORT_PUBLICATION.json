@@ -1,0 +1,103 @@
+{
+  "authorized_on": "2026-11-05",
+  "authorization": "用户在本次对话明确确认两份报告原图及仿真数据可以公开到 GitHub 和个人网站。",
+  "scope": "仅两份报告的 16 张页面图片及网页展示；不含原始 PPTX 和演讲者备注；不更改其他报告的受限数据发布规则。",
+  "images": [
+    {
+      "path": "source/medias/research-reports/gfm/slide-01.png",
+      "sha256": "3fcf605ef44efe01878bda50420e70f10d3e4e6abe9b05011af0102aed24baa1",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "source/medias/research-reports/gfm/slide-02.png",
+      "sha256": "3f271854560518037f2916a2888b6e8ddf841006610d5c9a766a3ecc5765613f",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "source/medias/research-reports/gfm/slide-03.png",
+      "sha256": "09097c86817c53f23727336a26059dc2537578c7388c8579917c0cb92a8cd645",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "source/medias/research-reports/gfm/slide-04.png",
+      "sha256": "e8d1ce61ad141ef5262add08599257172358bf005ab90efdfa1d72b23a971f9d",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "source/medias/research-reports/gfm/slide-05.png",
+      "sha256": "0858c40017341b59aaee746d5a2d18ce3bab0be2ed681db4401513836a74269e",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-01.png",
+      "sha256": "fb3088923f711f653ff739633bc75c65cea03eea85bf1e21fae0d3262249c1cf",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-02.png",
+      "sha256": "dd6f3d19d19469ae06d2ecc389a8cd2168dbbe1803d5a1161c887a15b8b46acb",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-03.png",
+      "sha256": "2c68b0bcc1a58693163fa1abc0497e4cc0fcdeef07bdfc2d32f905467eb05a7e",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-04.png",
+      "sha256": "a7222413f9b8b21459a7e8c162583194512d54f4e803e0100cf7c3119bd91712",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-05.png",
+      "sha256": "598f27055fd7bd9ec8de1464b608ad2de106732e3a19f72f84dbecd6a8c33ba9",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-06.png",
+      "sha256": "539ce9e3edc6cd42df86c65adc23a90ea984dc59c63b54713ed1337d36d28fff",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-07.png",
+      "sha256": "ffff886888b0a4eb4accc80aae6f4b1a40eda0a9f69bf304c9fc55e5bd2cd840",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-08.png",
+      "sha256": "87ce33852b7e980d104fcbfbf6611598c303c3fd88b27791e31581dc8680648d",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-09.png",
+      "sha256": "79b4eb290b036f57dc1327fa605fbf9003bb10058acafcee78290e35e58b8123",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-10.png",
+      "sha256": "11970565f50023ab4173cf127f5faaad7fb1baa409dc1f759bc30e0d71b2aa24",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "path": "source/medias/research-reports/uhvdc/slide-11.png",
+      "sha256": "1507b65fdca7dbe9ac72c5a9c0e77b864962834b9643fefe99f044f1b1df38c6",
+      "width": 1440,
+      "height": 1080
+    }
+  ]
+}

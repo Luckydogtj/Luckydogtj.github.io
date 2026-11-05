@@ -28,7 +28,16 @@ hideBanner: true
 </section>
 
 <section class="dog-research-section" id="report" style="margin-top:28px">
-  <div class="dog-ppt-slot"><h2>项目汇报 PPT</h2><p class="dog-research-restricted">汇报资料尚待公开审核。原始页面仅在本机预览中展示，公开版本暂不提供原图或下载。</p></div>
+  <link rel="stylesheet" href="/css/dog-ppt-viewer.css">
+<div class="dog-ppt-viewer" data-report-viewer data-deck="gfm" data-count="5" data-slide-base="/medias/research-reports/gfm">
+  <div class="dog-ppt-head"><h2>项目汇报 PPT</h2><span class="dog-ppt-status">汇报原页 · 5 页</span></div>
+  <button class="dog-ppt-stage" type="button" data-action="zoom" aria-label="放大查看当前 PPT 页面"><img data-slide-image src="/medias/research-reports/gfm/slide-01.png" width="1440" height="810" alt="构网型变流器专题汇报第 1 页" fetchpriority="high"></button>
+  <div class="dog-ppt-controls"><span data-page-label aria-live="polite">第 1 / 5 页</span><div class="dog-ppt-actions"><button type="button" data-action="prev" disabled>上一页</button><button type="button" data-action="next">下一页</button><button type="button" data-action="zoom">放大查看</button></div></div>
+  <div class="dog-ppt-pages" aria-label="PPT 页码"><button type="button" data-page="1" aria-label="跳到第 1 页" aria-current="page">1</button><button type="button" data-page="2" aria-label="跳到第 2 页">2</button><button type="button" data-page="3" aria-label="跳到第 3 页">3</button><button type="button" data-page="4" aria-label="跳到第 4 页">4</button><button type="button" data-page="5" aria-label="跳到第 5 页">5</button></div>
+  <p class="dog-ppt-note">构网型变流器专题 · 点击页面可放大，选中播放器后可用左右方向键翻页。展示内容为汇报原页，技术结论对应报告所述模型与仿真条件。</p>
+  <dialog class="dog-ppt-modal" aria-label="PPT 页面放大"><div class="dog-ppt-modal-bar"><span data-page-label>第 1 / 5 页</span><div><button type="button" data-action="prev">上一页</button> <button type="button" data-action="next">下一页</button> <button type="button" data-action="close">关闭</button></div></div><img data-slide-image alt="项目汇报放大页面"></dialog>
+</div>
+<script src="/js/dog-ppt-viewer.js" defer></script>
 </section>
 
 <div class="dog-research-layout">
@@ -191,7 +200,7 @@ hideBanner: true
 
 <section class="dog-research-section dog-report" id="report-notes">
   <h2><span class="dog-research-num">08</span>汇报专题导读</h2>
-  <div class="dog-report-intro"><div class="dog-report-meta"><span>关联专题汇报</span><span>原汇报 5 页</span><span>文字整理版 · 发布候选</span></div>
+  <div class="dog-report-intro"><div class="dog-report-meta"><span>关联专题汇报</span><span>原汇报 5 页</span><span>汇报导读</span></div>
   <h3>构网型变流器次 / 超同步振荡抑制</h3><p>这份汇报聚焦含 / 无电流环 GFM-VSC 的序阻抗、强电网稳定性和虚拟阻抗附加电压反馈，为构网型储能与海上风电项目提供相关专题分析。</p></div>
   <p class="dog-report-scope">专题对象为构网型变流器并网系统，不能据此认定已完成海上风电—储能—柔直全系统验证。报告内容也不作为个人独立完成全部研究的证明。</p>
   <div class="dog-report-topics"><details class="dog-report-topic" open>
@@ -216,7 +225,7 @@ hideBanner: true
     <a class="dog-report-related" href="#tech">阅读本页关联技术说明 <span aria-hidden="true">↗</span></a>
   </div>
 </details></div>
-  <p class="dog-report-disclosure"><strong>资料说明</strong>此处展示经清理的专题摘要与方法示意。完整报告、原始页面、控制参数和仿真数值尚未经公开授权，暂不提供下载或原图。摘要亦需完成内容与归属审核后才能发布。</p>
+  <p class="dog-report-disclosure"><strong>资料说明</strong>本页顶部展示经用户确认可公开的汇报页面，包含原图及仿真数据；下方导读为重新整理的文字与方法示意。演讲者备注和原始 PPT 文件不随网页发布。课题整体成果与个人参与范围分别说明。</p>
 </section>
 
 <nav class="dog-research-nextprev" aria-label="项目导航">

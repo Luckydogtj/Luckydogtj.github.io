@@ -1,0 +1,20 @@
+.dog-ppt-viewer { margin:28px 0 32px; padding:22px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; scroll-margin-top:88px; }
+.dog-ppt-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:16px; }
+.dog-ppt-head h2 { margin:0; color:#1e3a5f; font-size:1.3rem; }
+.dog-ppt-status { color:#785418; background:#fff4db; padding:4px 10px; border-radius:4px; font-size:.78rem; }
+.dog-ppt-stage { display:block; width:100%; padding:0; border:1px solid #e2e8f0; background:#f8fafc; cursor:zoom-in; }
+.dog-ppt-stage img { display:block; width:100%; height:auto; object-fit:contain; }
+.dog-ppt-controls { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-top:14px; }
+.dog-ppt-controls button,.dog-ppt-pages button,.dog-ppt-modal button { min-height:44px; min-width:44px; padding:8px 14px; border:1px solid #cbd5e1; border-radius:5px; background:#fff; color:#1e3a5f; cursor:pointer; font:inherit; }
+.dog-ppt-controls button:hover,.dog-ppt-pages button:hover { background:#eff6ff; }
+.dog-ppt-controls button:disabled,.dog-ppt-modal button:disabled { opacity:.4; cursor:default; }
+.dog-ppt-controls button:focus-visible,.dog-ppt-pages button:focus-visible,.dog-ppt-stage:focus-visible { outline:2px solid #2563eb; outline-offset:3px; }
+.dog-ppt-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.dog-ppt-pages { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.dog-ppt-pages button[aria-current="page"] { background:#2563eb; border-color:#2563eb; color:white; }
+.dog-ppt-note { font-size:.8rem; color:#64748b; margin:14px 0 0; line-height:1.7; }
+.dog-ppt-modal { width:min(1440px,96vw); max-width:96vw; max-height:96vh; padding:16px; border:0; border-radius:8px; box-sizing:border-box; background:#f8fafc; }
+.dog-ppt-modal::backdrop { background:rgba(15,23,42,.88); }
+.dog-ppt-modal img { display:block; width:100%; height:auto; max-height:calc(96vh - 100px); object-fit:contain; }
+.dog-ppt-modal-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:12px; }
+@media(max-width:600px) { .dog-ppt-viewer { padding:12px; margin-top:20px; } .dog-ppt-head h2 { font-size:1.15rem; } .dog-ppt-controls { align-items:flex-start; } .dog-ppt-controls button { padding:8px 10px; } .dog-ppt-modal { padding:8px; } }
